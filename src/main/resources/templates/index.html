@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="lang-logo">
+      <img src="/lang-logo.png">
+    </a>
+    <h1>App Solutions</h1>
+    <p>Offering solutions for all your app needs</p>
+    <a type="button" class="btn btn-lg btn-default" href="#"><span class="glyphicon glyphicon-flash"></span> Get Started</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/approve"><span class="glyphicon glyphicon-briefcase"></span> Approve Request</a>
+  </div>
+</div>
+<div class="container">
+  <div class="alert alert-info text-center" role="alert">
+    Let us be your solution to your problem. Our <a href="/team" class="alert-link">Team</a> is ready for you.
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-info-sign"></span> What we do</h3>
+      <ul>
+        <li>We help businesses of all sizes solution through their needs to better help their customers.</li>
+        <li>UX/UI, QA, Operation, Incident Management and More!</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
+      <ul>
+        <li>Info</li>
+        <ul>
+          <li>Information</li>
+
+        </ul>
+      </ul>
+     
+    </div>
+  </div> <!-- row -->
+</div>
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "2bbfa4a2-89bd-44ee-8859-8d7987b300bd", // The ID of this integration.
+      region: "us-south", // The region your integration is hosted in.
+      serviceInstanceID: "bde79a3e-84bc-4833-9e04-edb89edce817", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
