@@ -1,4 +1,4 @@
-package com.points;
+package com.project;
 
 
 import java.io.BufferedReader;
