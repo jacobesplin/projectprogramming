@@ -75,7 +75,10 @@ public class Main {
     return "confirmation";
 }
 @RequestMapping("/java")
-   String java () {
+   String java (Map<String, Object> model) {
+    String[] javaProjects = new String[] { "Beginner","JFrames", "Object Oriented(OOP)", "Libraries/Compile", "Maven Builds","JSP","Understanding Docs" };
+ 
+    model.put("javaProjects", javaProjects);
     return "java";
 }
 @RequestMapping("/python")
