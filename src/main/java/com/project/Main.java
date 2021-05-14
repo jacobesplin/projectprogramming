@@ -74,6 +74,46 @@ public class Main {
    String confirmation () {
     return "confirmation";
 }
+@RequestMapping("/java")
+   String java () {
+    return "confirmation";
+}
+@RequestMapping("/python")
+   String python () {
+    return "confirmation";
+}
+@RequestMapping("/javascript")
+   String javascript () {
+    return "confirmation";
+}
+@RequestMapping("/django")
+   String django () {
+    return "confirmation";
+}
+@RequestMapping("/flask")
+   String flask () {
+    return "confirmation";
+}
+@RequestMapping("/tomcat")
+   String tomcat () {
+    return "confirmation";
+}
+@RequestMapping("/node")
+   String node () {
+    return "confirmation";
+}
+@RequestMapping("/pythonanywhere")
+   String pythonanywhere () {
+    return "confirmation";
+}
+@RequestMapping("/heroku")
+   String heroku () {
+    return "confirmation";
+}
+@RequestMapping("/personal")
+   String personal () {
+    return "confirmation";
+}
 
 
   @RequestMapping("/db")
