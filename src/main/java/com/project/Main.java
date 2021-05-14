@@ -76,7 +76,7 @@ public class Main {
 }
 @RequestMapping("/java")
    String java () {
-    return "confirmation";
+    return "java";
 }
 @RequestMapping("/python")
    String python () {
