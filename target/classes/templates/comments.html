@@ -1,0 +1,7 @@
+<div style="padding-top: 3em;" th:fragment="comments">
+    <h3>Comments:</h3>
+    <div class="row" th:each="commentSection : ${commentSections}">
+        <div class="col-md-3 " th:text="${commentSection}"></div>
+        
+      </div>
+</div>

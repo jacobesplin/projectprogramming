@@ -22,7 +22,7 @@
         
         <div class="row">
             <div class="col-xs-9"><h3>And Enjoy!</h3>Issues? Please see our <a href="#trouble">troubleshooting guide</a></div>
-            <div class="col-xs-6">Sunset<br><img src="/minecraft/Minecraft_1.17_-_Multiplayer_3rd-party_Server_6_9_2021_8_57_58_AM.png" alt="minecraft" class="img-thumbnail" height="500" width="600"></div>
+            <div class="col-xs-6"><img src="/minecraft/Minecraft_1.17_-_Multiplayer_3rd-party_Server_6_9_2021_8_57_58_AM.png" alt="minecraft" class="img-thumbnail" height="500" width="600"><br>Sunset</div>
           </div>
         <h3>
             Somethings you may want to know before launching your server! 
@@ -35,10 +35,12 @@
         </p>
         <a id="trouble"><h3>Trouble Shooting</h3></a>
         <div class="row">
-            <u>Issues starting server</u><br>
+            <b>Issues starting server</b><br>
             <div class="col-md-8">
                 If you are having issues getting the server to start because of a java runtime issue make sure you are using the correct java version. Check this by typing java --version in the command prompt/terminal.
             </div>
         </div>
+
+        <div th:replace="comments :: comments"></div>
     </div>
 </body>

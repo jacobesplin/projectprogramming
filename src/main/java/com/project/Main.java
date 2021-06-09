@@ -118,7 +118,10 @@ public class Main {
     return "confirmation";
 }
 @RequestMapping("/minecraftserver")
-   String minecraft () {
+   String minecraft(Map<String, Object> model) {
+    String commentSection = "{\"comments\":[{\"user\":\"John\", \"comment\":\"Doe\"},{\"user\":\"Anna\", \"comment\":\"Smith\"},{\"user\":\"Peter\", \"comment\":\"Jones\"}";
+ 
+    model.put("commentSections", commentSection);
     return "minecraft";
 }
 
