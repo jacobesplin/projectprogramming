@@ -117,6 +117,10 @@ public class Main {
    String personal () {
     return "confirmation";
 }
+@RequestMapping("/minecraftserver")
+   String minecraft () {
+    return "minecraft";
+}
 
 
   @RequestMapping("/db")

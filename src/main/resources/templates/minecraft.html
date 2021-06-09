@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+    <center><h1><u>How to build a minecraft sever</u></h1></center>
+    
+    <div class="container">
+        <center>
+            <img src="/minecraft/Minecraft-Mobs.jpg" alt="minecraft" class="img-thumbnail" height="500" width="600">
+        </center>
+        <h3><u>Software:</u></h3>
+        <p>
+            Download the latest server (<a href="https://www.minecraft.net/en-us/download/server">server 1.17</a>)-Current as of this writing. Make sure you are using java version <a href="https://www.oracle.com/java/technologies/javase-jdk16-downloads.html">OpenJDK 16</a>.
+        </p>
+        <h3><u>How To:</u></h3>
+        <p>
+            Setting up the server is relatively easy. All you need to do is run the server and it does all the work.
+            <ul>
+                <li>Open a terminal or command prompt</li>
+                <li>Type java -jar server.jar</li>
+            </ul>
+        </p>
+        
+        <div class="row">
+            <div class="col-xs-9"><h3>And Enjoy!</h3>Issues? Please see our <a href="#trouble">troubleshooting guide</a></div>
+            <div class="col-xs-6">Sunset<br><img src="/minecraft/Minecraft_1.17_-_Multiplayer_3rd-party_Server_6_9_2021_8_57_58_AM.png" alt="minecraft" class="img-thumbnail" height="500" width="600"></div>
+          </div>
+        <h3>
+            Somethings you may want to know before launching your server! 
+        </h3>
+        <p>
+            <ul>
+                <li>Running the server on the same computer you are gaming on may cause memory issues and slow down the server.</li>
+                <li>There maybe some security risks.</li>
+            </ul>
+        </p>
+        <a id="trouble"><h3>Trouble Shooting</h3></a>
+        <p>
+            <u>Issues starting server</u><br>
+            If you are having issues getting the server to start because of a java runtime issue make sure you are using the correct java version. Check this by typing java --version in the command prompt/terminal.
+        </p>
+    </div>
+</body>
