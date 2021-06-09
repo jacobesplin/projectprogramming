@@ -1,17 +1,7 @@
 <div class="">
-  <div class="footer text-center" th:fragment="footer">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p><b>Powered by Tomcat & Thymeleaf</b></p>
+  <div class="footer text-center" th:fragment="footer" style="padding-top: 8em;">
+
+    
     <p> <a href="#"> Terms of Use</a> | <a href="#">What's New</a> | <a href="#">Help</a> </p>
     <p id="copyright"></p>
     <!-- javascripts -->
@@ -21,7 +11,7 @@
   <script>
     function copyright(){
       var d = new Date();
-      document.getElementById('copyright').innerHTML = "&copy; "+d.getFullYear();
+      document.getElementById('copyright').innerHTML = "<b>Powered by Tomcat & Thymeleaf</b> | Project Programming &copy; "+d.getFullYear();
     }
     copyright();
   </script>
