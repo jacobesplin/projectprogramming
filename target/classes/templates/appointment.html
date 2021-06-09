@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'hello')}">
+<body>
+    <div class="container">
+        <div class="container">
+            <form action="#" th:action="@{/}" th:object="${contactForm}" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" th:field="*{email}"  required>
+                    <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Phone Number</label>
+                    <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone Number" oninput="phoneFunc()" th:field="*{phone}" required>
+                    <label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" th:field="*{password}">
+                    <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</label>
+                </div>
+                <div class="form-group">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function isNumber(n)
+        {   
+            if(n=="-")return true;
+            if (n.trim().length === 0)
+                return false;
+            return !isNaN(n);
+        }
+        function phoneFunc(){
+            var num = document.getElementById("exampleInputPhone").value;
+            var builder = "";
+            for(i = 0; i<num.length;i++){
+                if(isNumber(num[i])){
+                    if(i==3 && num[i]!="-"){
+                        builder = builder+ "-";
+                    }
+                    if(i==7 && num[i]!="-"){
+                        builder = builder+ "-";
+                    }
+                    builder = builder + num[i];
+                    if(num.length>12){
+                        document.getElementById("exampleInputPhone").value = builder.substring(0, 12);
+                    }else{
+                        document.getElementById("exampleInputPhone").value = builder;
+                    }
+                }else{
+                    document.getElementById("exampleInputPhone").value = num.substring(0, num.length-1);
+                }
+        }
+    }
+    </script>
+</body>
+</html>

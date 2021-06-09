@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <a href="#" onclick="makeItHappen();return false;" class="lang-logo">
+      <img src="/lang-logo.png">
+      
+    </a>
+    <a href="#" onclick="makeItHappen();return false;"><p>Github</p></a>
+    <h1>Project Programming</h1>
+    
+  </div>
+</div>
+<div class="container">
+  <ul class="main-list-ulli">
+      <li class="main-list-ulli">
+          <div class= "java-main-page">
+            <h3>Coding</h3>
+            <a type="button" class="btn btn-lg btn-default" href="/java"><span class="glyphicon glyphicon-flash"></span> Java</a>
+            <a type="button" class="btn btn-lg btn-default" href="/python"><span class="glyphicon glyphicon-flash"></span> Python</a>
+            <a type="button" class="btn btn-lg btn-default" href="/javascript"><span class="glyphicon glyphicon-flash"></span> JavaScript</a>
+            <a type="button" class="btn btn-lg btn-default" href="/cplusplus"><span class="glyphicon glyphicon-flash"></span> C++</a>
+          </div>
+      </li>
+      <li class="main-list-ulli">
+        <div class= "java-main-page">
+          <h3>Web Frameworks</h3>
+          <a type="button" class="btn btn-lg btn-success" href="/django"><span class="glyphicon glyphicon-briefcase"></span>Django</a>
+          <a type="button" class="btn btn-lg btn-success" href="/flask"><span class="glyphicon glyphicon-briefcase"></span>Flask</a>
+          <a type="button" class="btn btn-lg btn-success" href="/tomcat"><span class="glyphicon glyphicon-briefcase"></span>Tomcat</a>
+          <a type="button" class="btn btn-lg btn-success" href="/node"><span class="glyphicon glyphicon-briefcase"></span>Node.js</a>
+        </div>
+    </li>
+    <li class="main-list-ulli">
+      <div class= "java-main-page">
+        <h3>Web Hosting</h3>
+        <a type="button" class="btn btn-lg btn-primary" href="/pythonanywhere"><span class="glyphicon glyphicon-th-large"></span>PythonAnywhere</a>
+        <a type="button" class="btn btn-lg btn-primary" href="/heroku"><span class="glyphicon glyphicon-th-large"></span>Heroku</a>
+        <a type="button" class="btn btn-lg btn-primary" href="/personal"><span class="glyphicon glyphicon-th-large"></span>Personal </a>
+      </div>
+     </li>
+     
+     <li class="main-list-ulli">
+      <div class= "java-main-page">
+        <h3>Other Projects</h3>
+        <a type="button" class="btn btn-lg btn-warning" href="/minecraftserver"><span class="glyphicon glyphicon-th-large"></span>Minecraft Server</a>
+      </div>
+     </li>
+     
+      
+  </ul>
+  </div>
+
+ <div class="container"> 
+    
+    
+  <div class="alert alert-info text-center" role="alert">
+    Working on projects to better my skills and enjoying the benefits
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-info-sign"></span> Personal Projects</h3>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
+      <ul>
+        <li>Info</li>
+        <ul>
+          <li>Information</li>
+
+        </ul>
+      </ul>
+     
+    </div>
+  </div> <!-- row -->
+</div>
+<script>
+  function makeItHappen(){
+    window.open('https://github.com/jacobesplin?tab=repositories', '_blank');
+  }
+</script>
+</body>
+
+</html>

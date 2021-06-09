@@ -1,0 +1,70 @@
+.jumbotron {
+  background: #000108;
+  color: white;
+  padding-bottom: 80px; }
+  .jumbotron .btn-primary {
+    background: #07c020;
+    border-color: #07c020; }
+    .jumbotron .btn-primary:hover {
+      background: #07c020; }
+  .jumbotron p {
+    color: #d9ccee;
+    max-width: 75%;
+    margin: 1em auto 2em; }
+  .navbar + .jumbotron {
+    margin-top: -20px; }
+  .jumbotron .lang-logo {
+    display: block;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid white; }
+    .jumbotron .lang-logo img {
+      max-width: 100%; }
+      .containForm{
+        width: 50%;
+    }
+
+.java-main-page{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  box-shadow: #000000;
+  border-color:#000000;
+}
+.java-main-page:hover{
+  box-shadow: 0px 0px;
+  border-color:#b8b9bd;
+  }
+  .java-main-page a{
+    text-decoration: none;
+    color: inherit;
+  }
+.java-main-page a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .list-ulli{
+    float:left;
+    display:block;
+    margin-left:10px;
+    margin-bottom:20px;
+}
+.list-ulli a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.main-list-ulli{
+  display:block;
+  margin-bottom:20px;
+}
+.main-list-ulli a{
+text-decoration: none;
+color: inherit;
+}
