@@ -13,22 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class API {
-	public String pullData(String api){
-        try{
-            URL url = new URL(api);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("accept", "application/json");
-            InputStream responseStream = connection.getInputStream();
-            InputStreamReader inputStreamReader =  new InputStreamReader(responseStream);
-            Stream<String> streamOfString = new BufferedReader(inputStreamReader).lines();
-            String streamToString = streamOfString.collect(Collectors.joining());
-            return streamToString;
-
-        }catch(IOException e){
-            
-        }
-        return "";
-    }
+	
 
     public String postData(String urlApi,String json){
         try {
