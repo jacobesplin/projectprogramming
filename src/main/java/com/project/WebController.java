@@ -69,7 +69,7 @@ public class WebController implements WebMvcConfigurer {
 			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
 			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"code\":"+"\""+approveForm.getApprovalCode()+
 				"\",\"body\":"+"\"business:"+approveForm.getBusiness()+"<br>Name:"+approveForm.getName()+"<br>code:"+approveForm.getApprovalCode()+"\",\"subject\":\"Project Programming Contact Form\"}";
-			System.out.println(api.postData(url,call));
+			api.postData(url,call);
 		}catch(Exception e){
 			System.out.println(e);
 		}
