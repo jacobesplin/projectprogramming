@@ -31,8 +31,9 @@ public class WebController implements WebMvcConfigurer {
 		try{
 			API api = new API();
 			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
-			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"email\":"+"\""+contactForm.getEmail()+"\"}";
-			System.out.println(api.postData(url,call));
+			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":"+"\""+contactForm.getEmail()+"\",
+			\"subject\":\"Project Programming Contact Form\"}";
+			api.postData(url,call);
 		}catch(Exception e){
 			System.out.println(e);
 		}
@@ -65,10 +66,9 @@ public class WebController implements WebMvcConfigurer {
 		}
 		try{
 			API api = new API();
-			String url = "https://hacker30.pythonanywhere.com/todo/api/v1.0/tasks/test";
+			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
 			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"code\":"+"\""+approveForm.getApprovalCode()+
-				"\",\"business\":"+"\""+approveForm.getBusiness()+
-				"\",\"name\":"+"\""+approveForm.getName()+"\"}";
+				"\",\"body\":"+"\"business:"+approveForm.getBusiness()+"<br>Name:"+approveForm.getName()+"code:"+approveForm.getApprovalCode()+"\"}";
 			System.out.println(api.postData(url,call));
 		}catch(Exception e){
 			System.out.println(e);
