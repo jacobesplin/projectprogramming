@@ -1,8 +1,8 @@
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/ApproveForm.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/Main.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/example/API.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/PersonForm.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/ContactForm.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/ApprovalController.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/API.java
-/run/user/1000/gvfs/smb-share:server=jacobserver.local,share=windowshare/projectprogramming/projectprogramming/src/main/java/com/project/WebController.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/ContactForm.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/ApprovalController.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/example/API.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/ApproveForm.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/PersonForm.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/Main.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/WebController.java
+/home/admins/windowShare/projectprogramming/projectprogramming/src/main/java/com/project/API.java
