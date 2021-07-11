@@ -42,14 +42,23 @@ public class WebController implements WebMvcConfigurer {
 		return "redirect:/confirmation";
 	}
     @GetMapping("/appointment")
-	public String showAppointmentForm(ContactForm contactForm) {
+	public String showAppointmentForm(AppointmentForm appointmentForm) {
 		return "appointment";
 	}
     @PostMapping("/appointment")
-	public String checkAppointment(@Valid ContactForm contactForm, BindingResult bindingResult) {
+	public String checkAppointment(@Valid AppointmentForm appointmentForm, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
 			return "appointment";
+		}
+		try{
+			API api = new API();
+			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
+			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":"+"\""+appointmentForm.toString()+
+			"\",\"subject\":\"Project Programming Appointment Form\"}";
+			api.postData(url,call);
+		}catch(Exception e){
+			System.out.println(e);
 		}
 
 		return "redirect:/results";
