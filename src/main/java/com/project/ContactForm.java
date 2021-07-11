@@ -14,7 +14,10 @@ public class ContactForm {
 	private String phone;
 
 	@NotNull
-	private String password;
+	private String firstName;
+	@NotNull
+	private String lastName;
+
 
 	public String getEmail() {
         System.out.println(this.email);
@@ -31,15 +34,21 @@ public class ContactForm {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPassword() {
-		return password;
+	public String getFirstName() {
+		return this.firstName;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return this.lastName;
 	}
 
+	public void setFirstName(String lastName) {
+		this.lastName = lastName;
+	}
 	public String toString() {
-		return "Person(Email: " + this.email + ", Phone: " + this.phone + ")";
+		return "Person(Email: " + this.email + ", Phone: " + this.phone + ",First Name:"+this.firstName+",Last Name:"+this.lastName+")";
 	}
 }
