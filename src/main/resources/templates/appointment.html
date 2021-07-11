@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label for="InputDateTime">Date & Time</label>
                     <input type="text" class="form-control" id="InputDateTime" th:field="*{date}" required>
-                    <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date/Time Error</label>
+                    <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
