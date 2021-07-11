@@ -50,14 +50,14 @@ public class AppointmentForm {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-    public String getDateTime() {
+    public String getDate() {
 		return this.date;
 	}
 
-	public void setDateTime(String dateTime) {
-		this.date = dateTime;
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public String toString() {
-		return "Person(Email: " + this.email + ", Phone: " + this.phone + ",First Name:"+this.firstName+",Last Name:"+this.lastName+")";
+		return "Person(Email: " + this.email + ", Phone: " + this.phone + ",First Name:"+this.firstName+",Last Name:"+this.lastName+",Date/Time:"+this.date+")";
 	}
 }
