@@ -45,7 +45,7 @@ public class ContactForm {
 		return this.lastName;
 	}
 
-	public void setFirstName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	public String toString() {
