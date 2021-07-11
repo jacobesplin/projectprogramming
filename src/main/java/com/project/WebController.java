@@ -31,14 +31,14 @@ public class WebController implements WebMvcConfigurer {
 		try{
 			API api = new API();
 			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
-			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":"+"\""+contactForm.getEmail()+
+			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":"+"\""+contactForm.toString()+
 			"\",\"subject\":\"Project Programming Contact Form\"}";
 			api.postData(url,call);
 		}catch(Exception e){
 			System.out.println(e);
 		}
 
-        System.out.println(contactForm.getEmail());
+        //System.out.println(contactForm.getEmail());
 		return "redirect:/confirmation";
 	}
     @GetMapping("/appointment")

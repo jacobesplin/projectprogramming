@@ -4,7 +4,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class ContactForm {
+public class AppointmentForm {
 
 	@NotNull
 	@Size(min=2, max=30)
@@ -17,6 +17,8 @@ public class ContactForm {
 	private String firstName;
 	@NotNull
 	private String lastName;
+    @NotNull
+	private String date;
 
 
 	public String getEmail() {
@@ -48,7 +50,14 @@ public class ContactForm {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+    public String getDateTime() {
+		return this.date;
+	}
+
+	public void setDateTime(String dateTime) {
+		this.date = dateTime;
+	}
 	public String toString() {
-		return "Person(First Name:"+this.firstName+",Last Name:"+this.lastName+",Email:"+ this.email + ", Phone: " + this.phone + ")";
+		return "Person(Email: " + this.email + ", Phone: " + this.phone + ",First Name:"+this.firstName+",Last Name:"+this.lastName+")";
 	}
 }
