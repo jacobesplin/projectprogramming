@@ -61,7 +61,7 @@ public class WebController implements WebMvcConfigurer {
 			System.out.println(e);
 		}
 
-		return "redirect:/results";
+		return "redirect:/confirmation";
 	}
 	@GetMapping("/approve")
 	public String showApproveForm(ApproveForm approveForm) {
