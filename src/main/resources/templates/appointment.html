@@ -42,7 +42,7 @@
             return !isNaN(n);
         }
         function phoneFunc(){
-            var num = document.getElementById("exampleInputPhone").value;
+            var num = document.getElementById("InputPhone").value;
             var builder = "";
             for(i = 0; i<num.length;i++){
                 if(isNumber(num[i])){
@@ -54,12 +54,12 @@
                     }
                     builder = builder + num[i];
                     if(num.length>12){
-                        document.getElementById("exampleInputPhone").value = builder.substring(0, 12);
+                        document.getElementById("InputPhone").value = builder.substring(0, 12);
                     }else{
-                        document.getElementById("exampleInputPhone").value = builder;
+                        document.getElementById("InputPhone").value = builder;
                     }
                 }else{
-                    document.getElementById("exampleInputPhone").value = num.substring(0, num.length-1);
+                    document.getElementById("InputPhone").value = num.substring(0, num.length-1);
                 }
         }
     }
