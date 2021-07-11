@@ -57,12 +57,8 @@ public class Main {
   String about() {
     return "about";
   }
-  /*
-  @RequestMapping("/appointment")
-  String appointments () {
-   return "appointment";
-}
-*/
+  
+
 
   @RequestMapping("/team")
    String team (Map<String, Object> model) {

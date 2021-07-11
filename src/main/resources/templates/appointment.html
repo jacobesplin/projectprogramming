@@ -28,7 +28,7 @@
                 
                 <div class="form-group">
                     <label for="InputDateTime">Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="InputDateTime" th:field="*{date}" required>
+                    <input type="datetime-local" class="form-control" id="InputDateTime" th:field="*{date}" oninput="dateFunc()" min="" required>
                     <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
                 </div>
                 
@@ -66,6 +66,14 @@
                 }
         }
     }
+    </script>
+    <script>
+        function dateMinFunc(){
+            const event = new Date(Date.now());
+            document.getElementById("InputDateTime").min = event.toISOString().substring(0,event.toISOString().length-8);
+            
+        }
+        dateMinFunc();
     </script>
 
 </body>

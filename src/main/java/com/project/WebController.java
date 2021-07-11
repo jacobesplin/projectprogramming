@@ -58,7 +58,7 @@ public class WebController implements WebMvcConfigurer {
 			"\",\"subject\":\"Project Programming Appointment Form\"}";
 			api.postData(url,call);
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
 		}
 
 		return "redirect:/confirmation";

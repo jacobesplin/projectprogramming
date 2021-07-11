@@ -58,6 +58,6 @@ public class AppointmentForm {
 		this.date = date;
 	}
 	public String toString() {
-		return "Person(Email: " + this.email + ", Phone: " + this.phone + ",First Name:"+this.firstName+",Last Name:"+this.lastName+",Date/Time:"+this.date+")";
+		return "Email: " + this.email + "<br> Phone: " + this.phone + "<br>First Name:"+this.firstName+"<br>Last Name:"+this.lastName+"<br>Date/Time:"+this.date+")";
 	}
 }
