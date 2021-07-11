@@ -7,12 +7,12 @@
                 <div class="form-group">
                     <label for="firstName">Fist Name:</label>
                     <input type="text" class="form-control" id="firstName" placeholder="First Name" th:field="*{firstName}"  required>
-                    <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Email Error</label>
+                    <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</label>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name:</label>
                     <input type="text" class="form-control" id="lastName" placeholder="Last Name" th:field="*{lastName}"  required>
-                    <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Email Error</label>
+                    <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</label>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
