@@ -68,3 +68,7 @@
 text-decoration: none;
 color: inherit;
 }
+.box{
+  border: 1rem;
+  border-style: solid;
+}

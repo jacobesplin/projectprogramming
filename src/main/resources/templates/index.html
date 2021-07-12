@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
-
+<style>
+  .box{
+    border: 1rem;
+  }
+</style>
 <body>
-
 <div class="jumbotron text-center">
   <div class="container">
     <a href="#" onclick="makeItHappen();return false;" class="lang-logo">
@@ -15,7 +18,21 @@
   </div>
 </div>
 <div class="container">
-  <ul class="main-list-ulli">
+    <center><h2><u>Hello and Welcome!</u></h2> </center>
+    <br>
+    <ul class="main-list-ulli">
+      <h4>
+      <li class="main-list-ulli">If you are a <b>business</b> that is need of <b>contract work</b> please make an <u><a href="/appointment"> appointment</a></u> or <u><a href="/approve">approve work</a></u>.Clients>Make Appointment or Clients>Approve Request</li>
+      <li class="main-list-ulli">If you are looking to get in <b>contact</b> with me please <u><a href="/contact">click here</a></u> and fill out the contact form. Info>Contact</li>
+      <li class="main-list-ulli">All others please feel free to browse and ask any questions!</li>
+      </h4>
+    </ul>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul class="main-list-ulli">
       <li class="main-list-ulli">
           <div class= "java-main-page">
             <h3>Coding</h3>
