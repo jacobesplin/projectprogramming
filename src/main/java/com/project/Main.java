@@ -109,9 +109,9 @@ public class Main {
     return "languages";
 }
 @RequestMapping(value = "/languages/{urlParameter}")
-  String viewProject (@RequestParam("project") String project) {
-     
-    System.out.println(project);
+  String viewProject (@RequestParam("project") String project,Map<String, Object> model) {
+    model.put("body", "<h1>Hello World!</h1><br> I am testing a container of sorts. This should allow me to make an api call to fill in this space!");
+    //System.out.println(project);
     return "viewProject";
 }
 //This is web frameworks
