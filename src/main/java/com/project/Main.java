@@ -25,6 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
 
 import javax.sql.DataSource;
@@ -70,21 +71,50 @@ public class Main {
    String confirmation () {
     return "confirmation";
 }
+
+//languages
 @RequestMapping("/java")
    String java (Map<String, Object> model) {
-    String[] javaProjects = new String[] { "Beginner","JFrames", "Object Oriented(OOP)", "Libraries/Compile", "Maven Builds","JSP","Understanding Docs" };
+    String[] projects = new String[] {"Network Tool"};
  
-    model.put("javaProjects", javaProjects);
-    return "java";
+    model.put("Projects", projects);
+    return "languages";
 }
 @RequestMapping("/python")
-   String python () {
-    return "confirmation";
+   String python (Map<String, Object> model) {
+    String[] projects = new String[] {};
+ 
+    model.put("Projects", projects);
+    return "languages";
 }
 @RequestMapping("/javascript")
-   String javascript () {
-    return "confirmation";
+   String javascript (Map<String, Object> model) {
+    String[] projects = new String[] {};
+ 
+    model.put("Projects", projects);
+    return "languages";
 }
+@RequestMapping("/cplusplus")
+   String cplusplus (Map<String, Object> model) {
+    String[] projects = new String[] {};
+ 
+    model.put("Projects", projects);
+    return "languages";
+}
+@RequestMapping("/csharp")
+   String csharp (Map<String, Object> model) {
+    String[] projects = new String[] {};
+ 
+    model.put("Projects", projects);
+    return "languages";
+}
+@RequestMapping(value = "/languages/{urlParameter}")
+  String viewProject (@RequestParam("project") String project) {
+     
+    System.out.println(project);
+    return "viewProject";
+}
+//This is web frameworks
 @RequestMapping("/django")
    String django () {
     return "confirmation";
