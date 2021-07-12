@@ -31,6 +31,9 @@
                     <input type="datetime-local" class="form-control" id="InputDateTime" th:field="*{date}" oninput="dateFunc()" min="" required>
                     <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
                 </div>
+                <div class="alert alert-info text-center" role="alert">
+                    <p id="isNotChromeMsg"></p>
+                </div>
                 
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
@@ -72,6 +75,16 @@
             const event = new Date(Date.now());
             document.getElementById("InputDateTime").min = event.toISOString().substring(0,event.toISOString().length-8);
         }
+        function checkBrowser(){
+            if(navigator.userAgent.indexOf("Chrome") == -1 )
+            {
+                document.getElementById("isNotChromeMsg").innerHTML ="Please use format 2021-07-12 08:02 am/pm or switch to chrome. No Appointments after 7 pm Mountain Standard Time.";
+            }
+            else{
+                document.getElementById("isNotChromeMsg").innerHTML ="No Appointments after 7 pm Mountain Standard Time.";
+            }
+        }
+        checkBrowser();
         dateMinFunc();
     </script>
 
