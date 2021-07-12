@@ -59,13 +59,13 @@ public class Main {
   }
   
 
-
+/*
   @RequestMapping("/team")
    String team (Map<String, Object> model) {
     model.put("msg","Welcome!");
     return "team";
 }
-
+*/
 @RequestMapping("/confirmation")
    String confirmation () {
     return "confirmation";
