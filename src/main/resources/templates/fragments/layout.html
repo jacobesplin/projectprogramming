@@ -5,6 +5,7 @@
     <title>Project Programming</title>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+
 </head>
 
 <body>
@@ -49,9 +50,9 @@
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search">
+                          <input type="text" class="form-control" placeholder="Search" id="search" >
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" onclick="searchFunc(event)">Submit</button>
                       </form>
                       <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user">Login</span></a></li>
@@ -75,11 +76,17 @@
             
         </div>
     </nav>
+    
     <div th:replace="${template}"/>
     <div th:replace="fragments/footer :: footer"></div>
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
-
+    <script>
+        const searchFunc=(e)=>{
+            e.preventDefault();
+            var search = document.getElementById('search').value;
+            window.location.replace("search?q="+search);
+        }
+    </script>
     </body>
