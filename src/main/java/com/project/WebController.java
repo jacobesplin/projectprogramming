@@ -91,7 +91,6 @@ public class WebController implements WebMvcConfigurer {
 	}
 	@GetMapping("/search")
 	public String search(@RequestParam String q){
-		
 		return Search.search(q);
 	}
 	@GetMapping("/html")
