@@ -19,6 +19,9 @@ public class AppointmentForm {
 	private String lastName;
     @NotNull
 	private String date;
+	@NotNull
+	private String time;
+
 
 
 	public String getEmail() {
@@ -57,7 +60,14 @@ public class AppointmentForm {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	public String getTime() {
+		return this.time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 	public String toString() {
-		return "Email: " + this.email + "<br> Phone: " + this.phone + "<br>First Name:"+this.firstName+"<br>Last Name:"+this.lastName+"<br>Date/Time:"+this.date.replace("T", " ");
+		return "Email: " + this.email + "<br> Phone: " + this.phone + "<br>First Name:"+this.firstName+"<br>Last Name:"+this.lastName+"<br>Date:"+this.date.replace("T", " ")+"<br> Time:"+this.time;
 	}
 }

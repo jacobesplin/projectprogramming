@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.ui.Model;
 
 
 @Controller
@@ -43,7 +44,9 @@ public class WebController implements WebMvcConfigurer {
 		return "redirect:/confirmation";
 	}
     @GetMapping("/appointment")
-	public String showAppointmentForm(AppointmentForm appointmentForm) {
+	public String showAppointmentForm(AppointmentForm appointmentForm,Model model) {
+		String[] times = {"8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM"};
+		model.addAttribute("timeFrame",times);
 		return "appointment";
 	}
     @PostMapping("/appointment")

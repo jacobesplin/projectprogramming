@@ -28,8 +28,14 @@
                 
                 <div class="form-group">
                     <label for="InputDateTime">Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="InputDateTime" th:field="*{date}" oninput="dateFunc()" min="" required>
+                    <input type="date" class="form-control" id="InputDateTime" th:field="*{date}" min="" required>
                     <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
+                </div>
+                <div class="form-group">
+                    <select name="time" id="time" th:field="*{time}" required>
+                        <option th:each="timeFrame: ${timeFrame}" th:value="${timeFrame}" th:text="${timeFrame}"/>
+                      </select>
+                    <label th:if="${#fields.hasErrors('time')}" th:errors="*{time}">time Error</label>
                 </div>
                 <div class="alert alert-info text-center" role="alert">
                     <p id="isNotChromeMsg"></p>
