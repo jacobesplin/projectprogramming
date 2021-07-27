@@ -115,6 +115,12 @@ public class Main {
     model.put("Projects", projects);
     return "languages";
 }
+@RequestMapping("/html")
+   String html (Map<String, Object> model) {
+    API api = new API();
+    model.put("body", api.pullData("https://appsolutions.pythonanywhere.com/api/v12/data/html/SimpleC++GUI"));
+    return "knowledge";
+}
 @RequestMapping(value = "/languages/{urlParameter}")
   String viewProject (@RequestParam("project") String project,Map<String, Object> model) {
     model.put("body", "<h1>Hello World!</h1><br> I am testing a container of sorts. This should allow me to make an api call to fill in this space!");

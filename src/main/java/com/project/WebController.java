@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.ui.Model;
+import java.util.Map;
 
 
 @Controller
@@ -92,5 +93,11 @@ public class WebController implements WebMvcConfigurer {
 	public String search(@RequestParam String q){
 		
 		return Search.search(q);
+	}
+	@GetMapping("/html")
+   	String html (Map<String, Object> model,@RequestParam String q) {
+		API api = new API();
+		model.put("body", api.pullData("https://appsolutions.pythonanywhere.com/api/v12/data/html/"+q));
+		return "knowledge";
 	}
 }
