@@ -1,14 +1,20 @@
 package com.project;
 import javax.validation.Valid;
-
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.ui.Model;
+
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Map;
 
 
@@ -98,5 +104,33 @@ public class WebController implements WebMvcConfigurer {
 		API api = new API();
 		model.put("body", api.pullData("https://appsolutions.pythonanywhere.com/api/v12/data/html/"+q));
 		return "knowledge";
+	}
+	@RequestMapping(value="/api/v12/storeinfo", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@ResponseBody
+	public String storeInfoApi(HttpServletRequest request){
+		
+		String ipAddress = request.getHeader("X-FORWARDED-FOR"); 
+		String response = "";
+		try{
+			BufferedReader reader = request.getReader();
+			StringBuilder buffer = new StringBuilder();
+			
+			String line;
+			while ((line = reader.readLine()) != null) {
+				buffer.append(line);
+				buffer.append(System.lineSeparator());
+			}
+			String data = buffer.toString();
+			System.out.println(data);
+			API api = new API();
+			response = api.postData("https://petsmartstorefinder.pythonanywhere.com/api/v12/storeinfo", data);
+		}catch(IOException e){
+
+		}
+		if (ipAddress == null) {  
+			ipAddress = request.getRemoteAddr();  
+		}
+		//System.out.println(ipAddress);
+		return response;
 	}
 }
