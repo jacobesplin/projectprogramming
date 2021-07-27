@@ -22,10 +22,16 @@ public class AppointmentForm {
 	@NotNull
 	private String time;
 
+	private String[] timeFrames = new String[10];
 
-
+	public void setTimes(String[] timeFrames){
+		this.timeFrames = timeFrames;
+	}
+	public String[] getTimes(){
+		return this.timeFrames;
+	}
 	public String getEmail() {
-        System.out.println(this.email);
+        //System.out.println(this.email);
 		return this.email;
 	}
 
