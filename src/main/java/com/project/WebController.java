@@ -26,6 +26,17 @@ public class WebController implements WebMvcConfigurer {
 		registry.addViewController("/results").setViewName("results");
 	}
 
+	
+
+    @RequestMapping("/checkout")
+    public String checkout(Model model) {
+        model.addAttribute("amount", 50 * 100); // in cents
+        model.addAttribute("stripePublicKey", "pk_test_51JIIdSBSUlyikFovVon5LMB8heiHW4l6Xrz3IQrYykA1PFNlrjwiizrXdBGi9sas3kMkU0HsgABuM1BR0JqYeRJ300yUOos8Ps");
+        model.addAttribute("currency", ChargeRequest.Currency.USD);
+        return "checkout";
+    }
+
+
 	@GetMapping("/contact")
 	public String showForm(ContactForm contactForm) {
 		return "contact";
