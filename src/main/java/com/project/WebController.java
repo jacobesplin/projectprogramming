@@ -27,7 +27,8 @@ public class WebController implements WebMvcConfigurer {
 	}
 
 	@RequestMapping("/charge")
-	public String charge(Model model){
+	public String charge(Model model,HttpServletRequest request){
+		TrackVisitors.trackMe(request.getRemoteAddr());
 		model.addAttribute("amount",50);
 		model.addAttribute("item","T-Shirt");
 		return "charge";

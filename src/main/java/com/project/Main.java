@@ -36,6 +36,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 
 @Controller
@@ -53,7 +55,8 @@ public class Main {
   }
 
   @RequestMapping("/")
-  String index() {
+  String index(HttpServletRequest request){
+		TrackVisitors.trackMe(request.getRemoteAddr());
     return "index";
   }
   @RequestMapping("/about")
