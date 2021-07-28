@@ -115,15 +115,15 @@ public class Main {
     model.put("Projects", projects);
     return "languages";
 }
-@RequestMapping("/html")
-   String html (Map<String, Object> model) {
-    API api = new API();
-    model.put("body", api.pullData("https://appsolutions.pythonanywhere.com/api/v12/data/html/SimpleC++GUI"));
-    return "knowledge";
-}
+
+
 @RequestMapping(value = "/languages/{urlParameter}")
   String viewProject (@RequestParam("project") String project,Map<String, Object> model) {
-    model.put("body", "<h1>Hello World!</h1><br> I am testing a container of sorts. This should allow me to make an api call to fill in this space!");
+    API api = new API();
+    String urlApi = "https://homeserver.servehttp.com/ReactSpringBoot/api/v12/html/project?project="+project+"}";
+    String json ="";
+    String html = api.postData(urlApi, json);
+    model.put("body", html);
     //System.out.println(project);
     return "viewProject";
 }
