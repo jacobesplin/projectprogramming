@@ -83,18 +83,18 @@ public class Main {
   return "languages";
 }
 @RequestMapping("/python")
-   String python (Map<String, Object> model) {
-    String[] projects = new String[] {};
- 
-    model.put("Projects", projects);
-    return "languages";
+  String python (Map<String, Object> model) {
+  ArrayList<ProjectList> project = new ArrayList<>();
+  project.add(new ProjectList("Python","/pics/NetworkTool.jpg"));
+  model.put("Projects", project);;
+  return "languages";
 }
 @RequestMapping("/javascript")
-   String javascript (Map<String, Object> model) {
-    String[] projects = new String[] {};
+  String javascript (Map<String, Object> model) {
+  String[] projects = new String[] {};
  
-    model.put("Projects", projects);
-    return "languages";
+  model.put("Projects", projects);
+  return "languages";
 }
 @RequestMapping("/cplusplus")
    String cplusplus (Map<String, Object> model) {
