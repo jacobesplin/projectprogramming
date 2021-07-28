@@ -36,6 +36,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+
+
 @Controller
 @SpringBootApplication
 public class Main {
@@ -74,11 +76,11 @@ public class Main {
 
 //languages
 @RequestMapping("/java")
-   String java (Map<String, Object> model) {
-    String[] projects = new String[] {"Network Tool"};
- 
-    model.put("Projects", projects);
-    return "languages";
+  String java (Map<String, Object> model) {
+  ArrayList<ProjectList> project = new ArrayList<>();
+  project.add(new ProjectList("Network Tool","/pics/NetworkTool.jpg"));
+  model.put("Projects", project);
+  return "languages";
 }
 @RequestMapping("/python")
    String python (Map<String, Object> model) {

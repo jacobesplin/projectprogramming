@@ -1,6 +1,7 @@
 com\project\ContactForm.class
 com\project\ApproveForm.class
 com\project\Main.class
+com\project\ProjectList.class
 com\project\ApprovalController.class
 com\project\Search.class
 com\example\API.class
