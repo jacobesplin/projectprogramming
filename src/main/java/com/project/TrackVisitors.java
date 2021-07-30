@@ -11,8 +11,8 @@ class TrackVisitors{
 			@Override
 			public void run() {
 				API api = new API();
-                System.out.println(api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors", "{\"ip\":\""+ipaddr+"\"}"));
-                System.out.println(ipaddr);
+                api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors", "{\"ip\":\""+ipaddr+"\"}");
+                
 			}
 		};
 		Thread track = new Thread(tracker);
