@@ -8,7 +8,9 @@ public class Search{
         if(q.contains("about"))return "redirect:/about";
         if(q.contains("minecraft") || q.contains("minecraftserver"))return "redirect:/minecraftserver";
         if(q.contains("request") || q.contains("approve"))return "redirect:/approve";
+        if(q.equals(""))return "redirect:/404";
         //if(q.contains("FlaskHTMLButtons"))return "redirect:/html?q="+q;
+
 
         return "redirect:/html?q="+q;
     }

@@ -117,6 +117,7 @@ public class WebController implements WebMvcConfigurer {
 	}
 	@GetMapping("/search")
 	public String search(@RequestParam String q){
+		System.out.println("value of q " + q);
 		return Search.search(q);
 	}
 	@GetMapping("/html")

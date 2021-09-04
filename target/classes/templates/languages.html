@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+
+<div class="container">
+    <ul class="list-ulli">
+        <th:block th:each="Project : ${Projects}">
+        <li class="list-ulli">
+            <a th:href="@{'languages/project?project='+${Project.name}}">
+            <div class= "java-main-page">
+                <h3 th:text="${Project.name}"/>
+                <img th:src="@{{id}(id=${Project.imgSrc})}" wiidth="100"height="100">
+                
+            </div>
+            </a>
+        </li>
+        </th:block>
+        
+    </ul>
+</div>
+
+
+</body>
+</html>

@@ -114,10 +114,10 @@ public class Main {
     return "languages";
 }
 @RequestMapping("/react")
-   String react (Map<String, Object> model) {
-    String[] projects = new String[] {};
- 
-    model.put("Projects", projects);
+String react (Map<String, Object> model) {
+    ArrayList<ProjectList> project = new ArrayList<>();
+    project.add(new ProjectList("petsmart","/pics/petsmart.JPG"));
+    model.put("Projects", project);
     return "languages";
 }
 
