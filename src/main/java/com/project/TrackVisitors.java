@@ -12,6 +12,8 @@ class TrackVisitors{
 			public void run() {
 				API api = new API();
                 api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors", "{\"ip\":\""+ipaddr+"\"}");
+				APISelfSigned api_self = new APISelfSigned();
+    			System.out.println(api_self.sendDataToServer("https://192.168.1.101/ReactSpringBoot/api/v12/data/collection",""));
                 
 			}
 		};
