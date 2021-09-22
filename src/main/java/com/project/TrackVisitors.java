@@ -13,7 +13,7 @@ class TrackVisitors{
 				API api = new API();
                 api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors", "{\"ip\":\""+ipaddr+"\"}");
 				APISelfSigned api_self = new APISelfSigned();
-    			System.out.println(api_self.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/collection",""));
+    			System.out.println(api_self.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/collection","{\"location\":\"projprog\",\"ip\":\""+ipaddr+"\"}"));
                 
 			}
 		};
