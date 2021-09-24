@@ -88,7 +88,7 @@ public class APISelfSigned{
 			InputStreamReader inputStreamReader = new InputStreamReader(responseStream);
 			Stream<String> streamOfString= new BufferedReader(inputStreamReader).lines();
 	        streamToString = streamOfString.collect(Collectors.joining());
-	        System.out.println(streamToString);
+	        //System.out.println(streamToString);
 	        return streamToString;
 		} catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException | KeyManagementException e1) {
 			// TODO Auto-generated catch block
