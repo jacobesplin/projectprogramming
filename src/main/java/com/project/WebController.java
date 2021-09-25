@@ -21,8 +21,8 @@ import java.util.Map;
 @Controller
 public class WebController implements WebMvcConfigurer {
 
-	private String url ="https://jacobsmuzik.ddns.net";
-	//private String url ="https://192.168.1.101";
+	//private String url ="https://jacobsmuzik.ddns.net";
+	private String url ="https://192.168.1.101";
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {

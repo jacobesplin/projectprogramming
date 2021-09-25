@@ -2420,19 +2420,16 @@ var Minecraft = function Minecraft() {
   }, "Check Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_modal__WEBPACK_IMPORTED_MODULE_1___default()), {
     isOpen: modalIsOpen
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("center", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    "for": "fname",
-    className: "center"
+    "for": "fname"
   }, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    onChange: setUsernameOnchange,
-    className: "center"
+    onChange: setUsernameOnchange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     "for": "password",
     className: "center"
   }, "password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
-    onChange: setPasswordeOnchange,
-    className: "center"
+    onChange: setPasswordeOnchange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: turnServerOn
   }, "Turn server on"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
