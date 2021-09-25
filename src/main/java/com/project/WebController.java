@@ -21,6 +21,9 @@ import java.util.Map;
 @Controller
 public class WebController implements WebMvcConfigurer {
 
+	private String url ="https://jacobsmuzik.ddns.net";
+	//private String url ="https://192.168.1.101";
+
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/results").setViewName("results");
@@ -172,7 +175,7 @@ public class WebController implements WebMvcConfigurer {
 			String data = buffer.toString();
 			System.out.println(data);
 			APISelfSigned api = new APISelfSigned();
-			response = api.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/get/gameProfile", data);
+			response = api.sendDataToServer(url+ "/ReactSpringBoot/api/v12/data/get/gameProfile", data);
 			//response = api.sendDataToServer("https://192.168.1.101/ReactSpringBoot/api/v12/data/get/gameProfile", data);
 		}catch(IOException e){
 
@@ -181,6 +184,33 @@ public class WebController implements WebMvcConfigurer {
 			ipAddress = request.getRemoteAddr();  
 		}
 		//System.out.println(ipAddress);
+		return response;
+	}
+	@RequestMapping(value="/api/v12/data/get/minecraft", method = RequestMethod.POST, produces = "application/text", consumes = "application/json")
+	@ResponseBody
+	public String getMineCraftStatus(HttpServletRequest request){
+	  
+		String response = "";
+		String data = "";
+		try{
+			BufferedReader reader = request.getReader();
+			StringBuilder buffer = new StringBuilder();
+			
+			String line;
+			while ((line = reader.readLine()) != null) {
+				buffer.append(line);
+				buffer.append(System.lineSeparator());
+			}
+		  data = buffer.toString();
+		  APISelfSigned api = new APISelfSigned();
+		  response = api.sendDataToServer(url+ "/ReactSpringBoot/api/v12/data/get/minecraft", data);
+		   
+		}catch(IOException e){
+   
+		}
+		
+		//System.out.println("this is the data " + data);
+	
 		return response;
 	}
 }

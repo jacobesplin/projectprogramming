@@ -167,6 +167,11 @@ String react (Map<String, Object> model) {
     model.put("commentSections", commentSection);
     return "minecraft";
 }
+@RequestMapping("/minecraft/server")
+   String minecraftServer(Map<String, Object> model) {
+     
+    return "minecraftServer";
+}
 
 
   @RequestMapping("/db")

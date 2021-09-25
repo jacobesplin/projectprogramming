@@ -1,0 +1,54 @@
+{
+  "name": "react-springboot",
+  "version": "1.0.0",
+  "description": "Practice using react and spring boot together",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "extract-text-webpack-plugin": "^3.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "rest": "^1.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.0.2",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "css-loader": "^6.0.0",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "3.1.0",
+    "styled-components": "^5.3.0",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobesplin/react-springboot.git"
+  },
+  "keywords": [
+    "rest",
+    "hateoas",
+    "spring",
+    "data",
+    "react"
+  ],
+  "author": "Jacob Esplin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobesplin/react-springboot/issues"
+  },
+  "homepage": "https://github.com/jacobesplin/react-springboot#readme",
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true,
+        "corejs": 3
+      }
+    ]
+  ]
+}
