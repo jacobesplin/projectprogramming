@@ -2419,13 +2419,21 @@ var Minecraft = function Minecraft() {
     onClick: checkServerStatus
   }, "Check Server"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_modal__WEBPACK_IMPORTED_MODULE_1___default()), {
     isOpen: modalIsOpen
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "for": "fname",
+    className: "center"
+  }, "Username:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    onChange: setUsernameOnchange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    onChange: setUsernameOnchange,
+    className: "center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "for": "password",
+    className: "center"
+  }, "password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
-    onChange: setPasswordeOnchange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onChange: setPasswordeOnchange,
+    className: "center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: turnServerOn
   }, "Turn server on"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: turnServerOff
@@ -2548,7 +2556,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".center{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    \r\n}\r\n.center-color{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    background-color: rgb(7, 7, 7);\r\n}\r\nh1,h2,h3,h4,h5,h6,p{\r\n    color: white;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n  }\r\n  \r\n  /* Modal Content */\r\n  .modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n  }\r\n  \r\n  /* The Close Button */\r\n  .close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n  }\r\n  \r\n  .close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n", "",{"version":3,"sources":["webpack://./minecraft/WEB-INF/js/minecraft/Minecraft.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,kBAAkB;IAClB,UAAU;;AAEd;AACA;IACI,iBAAiB;IACjB,kBAAkB;IAClB,UAAU;IACV,8BAA8B;AAClC;AACA;IACI,YAAY;AAChB;;AAEA,2BAA2B;AAC3B;IACI,aAAa,EAAE,sBAAsB;IACrC,eAAe,EAAE,kBAAkB;IACnC,UAAU,EAAE,eAAe;IAC3B,kBAAkB,EAAE,wBAAwB;IAC5C,OAAO;IACP,MAAM;IACN,WAAW,EAAE,eAAe;IAC5B,YAAY,EAAE,gBAAgB;IAC9B,cAAc,EAAE,4BAA4B;IAC5C,4BAA4B,EAAE,mBAAmB;IACjD,iCAAiC,EAAE,qBAAqB;EAC1D;;EAEA,kBAAkB;EAClB;IACE,yBAAyB;IACzB,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,UAAU;EACZ;;EAEA,qBAAqB;EACrB;IACE,cAAc;IACd,YAAY;IACZ,eAAe;IACf,iBAAiB;EACnB;;EAEA;;IAEE,WAAW;IACX,qBAAqB;IACrB,eAAe;EACjB","sourcesContent":[".center{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    \r\n}\r\n.center-color{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    background-color: rgb(7, 7, 7);\r\n}\r\nh1,h2,h3,h4,h5,h6,p{\r\n    color: white;\r\n}\r\n\r\n/* The Modal (background) */\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n  }\r\n  \r\n  /* Modal Content */\r\n  .modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n  }\r\n  \r\n  /* The Close Button */\r\n  .close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n  }\r\n  \r\n  .close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".center{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    \r\n}\r\n.center-color{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    background-color: rgb(7, 7, 7);\r\n}\r\nh1,h2,h3,h4,h5,h6,p{\r\n    color: white;\r\n}\r\n\r\n", "",{"version":3,"sources":["webpack://./minecraft/WEB-INF/js/minecraft/Minecraft.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,kBAAkB;IAClB,UAAU;;AAEd;AACA;IACI,iBAAiB;IACjB,kBAAkB;IAClB,UAAU;IACV,8BAA8B;AAClC;AACA;IACI,YAAY;AAChB","sourcesContent":[".center{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    \r\n}\r\n.center-color{\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 50%;\r\n    background-color: rgb(7, 7, 7);\r\n}\r\nh1,h2,h3,h4,h5,h6,p{\r\n    color: white;\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
