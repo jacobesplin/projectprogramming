@@ -154,4 +154,33 @@ public class WebController implements WebMvcConfigurer {
 		//System.out.println(ipAddress);
 		return response;
 	}
+	@RequestMapping(value="/api/v12/gameProfile", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@ResponseBody
+	public String gameProfile(HttpServletRequest request){
+		
+		String ipAddress = request.getHeader("X-FORWARDED-FOR"); 
+		String response = "";
+		try{
+			BufferedReader reader = request.getReader();
+			StringBuilder buffer = new StringBuilder();
+			
+			String line;
+			while ((line = reader.readLine()) != null) {
+				buffer.append(line);
+				buffer.append(System.lineSeparator());
+			}
+			String data = buffer.toString();
+			System.out.println(data);
+			APISelfSigned api = new APISelfSigned();
+			response = api.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/get/gameProfile", data);
+			//response = api.sendDataToServer("https://192.168.1.101/ReactSpringBoot/api/v12/data/get/gameProfile", data);
+		}catch(IOException e){
+
+		}
+		if (ipAddress == null) {  
+			ipAddress = request.getRemoteAddr();  
+		}
+		//System.out.println(ipAddress);
+		return response;
+	}
 }
