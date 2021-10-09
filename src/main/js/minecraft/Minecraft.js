@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 const axios = require('axios');
 import MinecraftProperties from './MinecraftProperties';
-
+import './Minecraft.css';
 const Minecraft=()=>{
 	//const[jsonObject,setJsonObject] = useState('');
 	const apiPOST= (url,jsonObject)=>{
@@ -29,7 +29,7 @@ const Minecraft=()=>{
         })
         .catch(err => console.log(err))
         var data = await a;
-		document.getElementById("serverStatus").innerHTML= data['data'];
+		document.getElementById("serverMinecraftStatus").innerHTML= data['data'];
 		
 	}
 	const turnServerOff = async (event)=>{
@@ -43,7 +43,7 @@ const Minecraft=()=>{
         })
         .catch(err => console.log(err))
         var data = await a;
-		document.getElementById("serverStatus").innerHTML= data['data'];
+		document.getElementById("serverMinecraftStatus").innerHTML= data['data'];
 		
 	}
 	const checkServerStatus = async () =>{
@@ -57,7 +57,7 @@ const Minecraft=()=>{
         })
         .catch(err => console.log(err))
         var data = await a;
-		document.getElementById("serverStatus").innerHTML= data['data'] ;
+		document.getElementById("serverMinecraftStatus").innerHTML= data['data'] ;
 		
 	}
 	//checkServerStatus();
@@ -66,7 +66,7 @@ const Minecraft=()=>{
 	  }, []);
     return (
         <div>
-			<div><p id="serverStatus"></p></div>
+			<div><p id="serverMinecraftStatus"></p></div>
             <button onClick={turnServerOn}>Turn server on</button>
 			<button onClick={turnServerOff}>Turn server off</button>
 			<button onClick={checkServerStatus}>Check Server</button>
