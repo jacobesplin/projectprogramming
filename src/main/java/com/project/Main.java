@@ -80,7 +80,7 @@ public class Main {
   String java(Map<String, Object> model) {
     ArrayList<ProjectList> project = new ArrayList<>();
     project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
-    project.add(new ProjectList("Algorithms & Data Structurs", "/pics/AlgorithmsDataStructures.JPG"));
+    project.add(new ProjectList("Algorithms & Data Structures", "/pics/AlgorithmsDataStructures.JPG"));
     model.put("Projects", project);
     return "languages";
   }
