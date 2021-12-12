@@ -54,7 +54,7 @@ public class Main {
 
   @RequestMapping("/")
   String index(HttpServletRequest request) {
-    TrackVisitors.trackMe(request.getRemoteAddr());
+    TrackVisitors.trackMe(request.getRemoteAddr(), "home");
     return "index";
   }
 
@@ -82,7 +82,7 @@ public class Main {
     project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
     project.add(new ProjectList("AlgorithmsDataStructures", "/pics/AlgorithmsDataStructures.JPG"));
     model.put("Projects", project);
-    TrackVisitors.trackMe(request.getRemoteAddr(), "home");
+    TrackVisitors.trackMe(request.getRemoteAddr(), "java");
     return "languages";
   }
 
