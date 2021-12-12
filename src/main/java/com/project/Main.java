@@ -128,12 +128,12 @@ public class Main {
   }
 
   @RequestMapping(value = "/languages/{urlParameter}")
-  String viewProject(@RequestParam("project") String project, Map<String, Object> model) {
+  String viewProject(HttpServletRequest request, @RequestParam("project") String project, Map<String, Object> model) {
     API api = new API();
     String urlApi = "https://appsolutions.pythonanywhere.com/api/v12/data/html/" + project.replace(" ", "");
     String html = api.pullData(urlApi);
     model.put("body", html);
-    // System.out.println(project);
+    TrackVisitors.trackMe(request.getRemoteAddr());
     return "viewProject";
   }
 
