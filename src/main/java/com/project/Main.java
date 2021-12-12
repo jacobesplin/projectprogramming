@@ -82,7 +82,7 @@ public class Main {
     project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
     project.add(new ProjectList("AlgorithmsDataStructures", "/pics/AlgorithmsDataStructures.JPG"));
     model.put("Projects", project);
-    TrackVisitors.trackMe(request.getRemoteAddr());
+    TrackVisitors.trackMe(request.getRemoteAddr(), "home");
     return "languages";
   }
 
@@ -133,7 +133,7 @@ public class Main {
     String urlApi = "https://appsolutions.pythonanywhere.com/api/v12/data/html/" + project.replace(" ", "");
     String html = api.pullData(urlApi);
     model.put("body", html);
-    TrackVisitors.trackMe(request.getRemoteAddr());
+    TrackVisitors.trackMe(request.getRemoteAddr(), "languages/" + project.replace(" ", ""));
     return "viewProject";
   }
 
