@@ -77,11 +77,12 @@ public class Main {
 
   // languages
   @RequestMapping("/java")
-  String java(Map<String, Object> model) {
+  String java(Map<String, Object> model, HttpServletRequest request) {
     ArrayList<ProjectList> project = new ArrayList<>();
     project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
     project.add(new ProjectList("AlgorithmsDataStructures", "/pics/AlgorithmsDataStructures.JPG"));
     model.put("Projects", project);
+    TrackVisitors.trackMe(request.getRemoteAddr());
     return "languages";
   }
 
