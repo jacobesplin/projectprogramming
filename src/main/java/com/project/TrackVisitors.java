@@ -12,13 +12,17 @@ class TrackVisitors {
 		Runnable tracker = new Runnable() {
 			@Override
 			public void run() {
-				try {
-					API api = new API();
-					api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors",
-							"{\"location\":\"projprog\",\"ip\":\"" + ipaddr + "\",\"page\":\"" + pageVisited + "\"}");
-				} catch (Exception e2) {
-
-				}
+				/*
+				 * try {
+				 * API api = new API();
+				 * api.postData(
+				 * "https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors",
+				 * "{\"location\":\"projprog\",\"ip\":\"" + ipaddr + "\",\"page\":\"" +
+				 * pageVisited + "\"}");
+				 * } catch (Exception e2) {
+				 * 
+				 * }
+				 */
 				try {
 					APISelfSigned api_self = new APISelfSigned();
 					api_self.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/collection",
@@ -29,6 +33,7 @@ class TrackVisitors {
 
 			}
 		};
+
 		Thread track = new Thread(tracker);
 		track.start();
 
