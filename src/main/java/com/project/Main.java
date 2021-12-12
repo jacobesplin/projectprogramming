@@ -38,8 +38,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-
 @Controller
 @SpringBootApplication
 public class Main {
@@ -55,124 +53,138 @@ public class Main {
   }
 
   @RequestMapping("/")
-  String index(HttpServletRequest request){
-		TrackVisitors.trackMe(request.getRemoteAddr());
+  String index(HttpServletRequest request) {
+    TrackVisitors.trackMe(request.getRemoteAddr());
     return "index";
   }
+
   @RequestMapping("/about")
   String about() {
     return "about";
   }
-  
 
-/*
-  @RequestMapping("/team")
-   String team (Map<String, Object> model) {
-    model.put("msg","Welcome!");
-    return "team";
-}
-*/
-@RequestMapping("/confirmation")
-   String confirmation () {
+  /*
+   * @RequestMapping("/team")
+   * String team (Map<String, Object> model) {
+   * model.put("msg","Welcome!");
+   * return "team";
+   * }
+   */
+  @RequestMapping("/confirmation")
+  String confirmation() {
     return "confirmation";
-}
+  }
 
-//languages
-@RequestMapping("/java")
-  String java (Map<String, Object> model) {
-  ArrayList<ProjectList> project = new ArrayList<>();
-  project.add(new ProjectList("Network Tool","/pics/NetworkTool.jpg"));
-  model.put("Projects", project);
-  return "languages";
-}
-@RequestMapping("/python")
-  String python (Map<String, Object> model) {
-  ArrayList<ProjectList> project = new ArrayList<>();
-  project.add(new ProjectList("Python","/pics/NetworkTool.jpg"));
-  model.put("Projects", project);;
-  return "languages";
-}
-@RequestMapping("/javascript")
-  String javascript (Map<String, Object> model) {
-  String[] projects = new String[] {};
- 
-  model.put("Projects", projects);
-  return "languages";
-}
-@RequestMapping("/cplusplus")
-   String cplusplus (Map<String, Object> model) {
-    String[] projects = new String[] {};
- 
-    model.put("Projects", projects);
-    return "languages";
-}
-@RequestMapping("/csharp")
-   String csharp (Map<String, Object> model) {
-    String[] projects = new String[] {};
- 
-    model.put("Projects", projects);
-    return "languages";
-}
-@RequestMapping("/react")
-String react (Map<String, Object> model) {
+  // languages
+  @RequestMapping("/java")
+  String java(Map<String, Object> model) {
     ArrayList<ProjectList> project = new ArrayList<>();
-    project.add(new ProjectList("petsmart","/pics/petsmart.JPG"));
+    project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
+    project.add(new ProjectList("Algorithms & Data Structurs", "/pics/AlgorithmsDataStructures.JPG"));
     model.put("Projects", project);
     return "languages";
-}
+  }
 
+  @RequestMapping("/python")
+  String python(Map<String, Object> model) {
+    ArrayList<ProjectList> project = new ArrayList<>();
+    project.add(new ProjectList("Python", "/pics/NetworkTool.jpg"));
+    model.put("Projects", project);
+    ;
+    return "languages";
+  }
 
-@RequestMapping(value = "/languages/{urlParameter}")
-  String viewProject (@RequestParam("project") String project,Map<String, Object> model) {
+  @RequestMapping("/javascript")
+  String javascript(Map<String, Object> model) {
+    String[] projects = new String[] {};
+
+    model.put("Projects", projects);
+    return "languages";
+  }
+
+  @RequestMapping("/cplusplus")
+  String cplusplus(Map<String, Object> model) {
+    String[] projects = new String[] {};
+
+    model.put("Projects", projects);
+    return "languages";
+  }
+
+  @RequestMapping("/csharp")
+  String csharp(Map<String, Object> model) {
+    String[] projects = new String[] {};
+
+    model.put("Projects", projects);
+    return "languages";
+  }
+
+  @RequestMapping("/react")
+  String react(Map<String, Object> model) {
+    ArrayList<ProjectList> project = new ArrayList<>();
+    project.add(new ProjectList("petsmart", "/pics/petsmart.JPG"));
+    model.put("Projects", project);
+    return "languages";
+  }
+
+  @RequestMapping(value = "/languages/{urlParameter}")
+  String viewProject(@RequestParam("project") String project, Map<String, Object> model) {
     API api = new API();
-    String urlApi = "https://appsolutions.pythonanywhere.com/api/v12/data/html/"+project;
+    String urlApi = "https://appsolutions.pythonanywhere.com/api/v12/data/html/" + project;
     String html = api.pullData(urlApi);
     model.put("body", html);
-    //System.out.println(project);
+    // System.out.println(project);
     return "viewProject";
-}
-//This is web frameworks
-@RequestMapping("/django")
-   String django () {
+  }
+
+  // This is web frameworks
+  @RequestMapping("/django")
+  String django() {
     return "confirmation";
-}
-@RequestMapping("/flask")
-   String flask () {
+  }
+
+  @RequestMapping("/flask")
+  String flask() {
     return "confirmation";
-}
-@RequestMapping("/tomcat")
-   String tomcat () {
+  }
+
+  @RequestMapping("/tomcat")
+  String tomcat() {
     return "confirmation";
-}
-@RequestMapping("/node")
-   String node () {
+  }
+
+  @RequestMapping("/node")
+  String node() {
     return "confirmation";
-}
-@RequestMapping("/pythonanywhere")
-   String pythonanywhere () {
+  }
+
+  @RequestMapping("/pythonanywhere")
+  String pythonanywhere() {
     return "confirmation";
-}
-@RequestMapping("/heroku")
-   String heroku () {
+  }
+
+  @RequestMapping("/heroku")
+  String heroku() {
     return "confirmation";
-}
-@RequestMapping("/personal")
-   String personal () {
+  }
+
+  @RequestMapping("/personal")
+  String personal() {
     return "confirmation";
-}
-@RequestMapping("/minecraftserver")
-   String minecraft(Map<String, Object> model) {
+  }
+
+  @RequestMapping("/minecraftserver")
+  String minecraft(Map<String, Object> model) {
     String commentSection = "{\"comments\":[{\"user\":\"John\", \"comment\":\"Doe\"},{\"user\":\"Anna\", \"comment\":\"Smith\"},{\"user\":\"Peter\", \"comment\":\"Jones\"}";
- 
+
     model.put("commentSections", commentSection);
     return "minecraft";
-}
-@RequestMapping("/minecraft/server")
-   String minecraftServer(Map<String, Object> model) {
-     
-    return "minecraftServer";
-}
+  }
 
+  @RequestMapping("/minecraft/server")
+  String minecraftServer(Map<String, Object> model) {
+
+    return "minecraftServer";
+  }
 
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
@@ -205,7 +217,5 @@ String react (Map<String, Object> model) {
       return new HikariDataSource(config);
     }
   }
-
- 
 
 }
