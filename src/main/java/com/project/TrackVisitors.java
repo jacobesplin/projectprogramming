@@ -15,7 +15,7 @@ class TrackVisitors {
 				try {
 					API api = new API();
 					api.postData("https://appsolutions.pythonanywhere.com/api/v12/data/projectprogramming/visitors",
-							"{\"location\":\"projprog\",\"ip\":\"" + ipaddr + "\"}");
+							"{\"location\":\"projprog\",\"ip\":\"" + ipaddr + "\",\"page\":\"" + pageVisited + "\"}");
 				} catch (Exception e2) {
 
 				}
