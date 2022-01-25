@@ -90,7 +90,6 @@ public class Main {
     ArrayList<ProjectList> project = new ArrayList<>();
     project.add(new ProjectList("Python", "/pics/NetworkTool.jpg"));
     model.put("Projects", project);
-    ;
     return "languages";
   }
 
@@ -113,7 +112,6 @@ public class Main {
   @RequestMapping("/csharp")
   String csharp(Map<String, Object> model) {
     String[] projects = new String[] {};
-
     model.put("Projects", projects);
     return "languages";
   }

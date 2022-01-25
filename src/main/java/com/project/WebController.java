@@ -182,7 +182,6 @@ public class WebController implements WebMvcConfigurer {
 				buffer.append(System.lineSeparator());
 			}
 			String data = buffer.toString();
-			System.out.println(data);
 			APISelfSigned api = new APISelfSigned();
 			response = api.sendDataToServer(url + "/ReactSpringBoot/api/v12/data/get/gameProfile", data);
 			// response =
