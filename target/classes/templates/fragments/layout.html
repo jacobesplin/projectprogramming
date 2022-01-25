@@ -126,6 +126,7 @@
       const searchFunc = (e) => {
         if (event.keyCode == 13) {
           var search = document.getElementById("search").value;
+          console.log(search);
           window.location.href =
             "https://projectprogramming.herokuapp.com/search?q=" + search;
         }
