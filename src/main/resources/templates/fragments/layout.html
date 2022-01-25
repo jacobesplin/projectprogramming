@@ -124,7 +124,6 @@
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script>
       const searchFunc = (e) => {
-        e.preventDefault();
         if (event.keyCode == 13) {
           var search = document.getElementById("search").value;
           window.location.href =
