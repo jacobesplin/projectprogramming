@@ -124,9 +124,9 @@
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script>
       const searchFunc = (e) => {
-        if (event.keyCode == 13) {
-          var search = document.getElementById("search").value;
-          console.log(search);
+        var search = document.getElementById("search").value;
+        console.log(search);
+        if (e.keyCode == 13) {
           window.location.href =
             "https://projectprogramming.herokuapp.com/search?q=" + search;
         }
