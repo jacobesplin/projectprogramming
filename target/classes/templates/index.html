@@ -1,124 +1,159 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
-<style>
-  .box{
-    border: 1rem;
-  }
-</style>
-<body>
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="#" onclick="makeItHappen();return false;" class="lang-logo">
-      <img src="/lang-logo.png">
-      
-    </a>
-    <a href="#" onclick="makeItHappen();return false;"><p>Github</p></a>
-    <h1>Project Programming</h1>
-    
-  </div>
-</div>
-<div class="container">
-    <center><h2><u>Hello and Welcome!</u></h2> </center>
-    <br>
-    <ul class="main-list-ulli">
-      
-      <li class="main-list-ulli"><h4>If you are a <b>business</b> that is need of <b>contract work</b> please make an <u><a href="/appointment"> appointment</a></u> or <u><a href="/approve">approve work.</a></u></h4></li>
-      <li class="main-list-ulli"><h4>If you are looking to get in <b>contact</b> with me please <u><a href="/contact">click here</a></u> and fill out the contact form. </h4></li>
-      <li class="main-list-ulli"><h4>All others please feel free to browse and ask any questions!</h4></li>
-      </h4>
-    </ul>
-    <hr>
-    <br>
-    <br>
-    <center><h2>Work Crafted</h2></center>
-    <ul class="main-list-ulli">
-      <li class="main-list-ulli">
-          <div class= "java-main-page">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'index')}"
+>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://skygods.servegame.com:8443/static/stylesheets/styles.css"
+    />
+    <style>
+      .box {
+        border: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <a href="#" onclick="makeItHappen();return false;" class="lang-logo">
+          <img src="/lang-logo.png" />
+        </a>
+        <a href="#" onclick="makeItHappen();return false;"><p>Github</p></a>
+        <h1>Project Programming</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div id="indexPageContent"></div>
+      <hr />
+      <br />
+      <br />
+      <center><h2>Work Crafted</h2></center>
+      <ul class="main-list-ulli">
+        <li class="main-list-ulli">
+          <div class="java-main-page">
             <h3>Coding</h3>
-            <a type="button" class="btn btn-lg btn-default" href="/java"><span class="glyphicon glyphicon-flash"></span> Java</a>
-            <a type="button" class="btn btn-lg btn-default" href="/python"><span class="glyphicon glyphicon-flash"></span> Python</a>
-            <a type="button" class="btn btn-lg btn-default" href="/javascript"><span class="glyphicon glyphicon-flash"></span> JavaScript</a>
-            <a type="button" class="btn btn-lg btn-default" href="/cplusplus"><span class="glyphicon glyphicon-flash"></span> C++</a>
-            <a type="button" class="btn btn-lg btn-default" href="/csharp"><span class="glyphicon glyphicon-flash"></span> C#</a>
-            <a type="button" class="btn btn-lg btn-default" href="/react"><span class="glyphicon glyphicon-flash"></span> React</a>
+            <a type="button" class="btn btn-lg btn-default" href="/java"
+              ><span class="glyphicon glyphicon-flash"></span> Java</a
+            >
+            <a type="button" class="btn btn-lg btn-default" href="/python"
+              ><span class="glyphicon glyphicon-flash"></span> Python</a
+            >
+            <a type="button" class="btn btn-lg btn-default" href="/javascript"
+              ><span class="glyphicon glyphicon-flash"></span> JavaScript</a
+            >
+            <a type="button" class="btn btn-lg btn-default" href="/cplusplus"
+              ><span class="glyphicon glyphicon-flash"></span> C++</a
+            >
+            <a type="button" class="btn btn-lg btn-default" href="/csharp"
+              ><span class="glyphicon glyphicon-flash"></span> C#</a
+            >
+            <a type="button" class="btn btn-lg btn-default" href="/react"
+              ><span class="glyphicon glyphicon-flash"></span> React</a
+            >
           </div>
-      </li>
-      <li class="main-list-ulli">
-        <div class= "java-main-page">
-          <h3>Web Frameworks</h3>
-          <a type="button" class="btn btn-lg btn-success" href="/django"><span class="glyphicon glyphicon-briefcase"></span>Django</a>
-          <a type="button" class="btn btn-lg btn-success" href="/flask"><span class="glyphicon glyphicon-briefcase"></span>Flask</a>
-          <a type="button" class="btn btn-lg btn-success" href="/tomcat"><span class="glyphicon glyphicon-briefcase"></span>Tomcat</a>
-          <a type="button" class="btn btn-lg btn-success" href="/node"><span class="glyphicon glyphicon-briefcase"></span>Node.js</a>
+        </li>
+        <li class="main-list-ulli">
+          <div class="java-main-page">
+            <h3>Web Frameworks</h3>
+            <a type="button" class="btn btn-lg btn-success" href="/django"
+              ><span class="glyphicon glyphicon-briefcase"></span>Django</a
+            >
+            <a type="button" class="btn btn-lg btn-success" href="/flask"
+              ><span class="glyphicon glyphicon-briefcase"></span>Flask</a
+            >
+            <a type="button" class="btn btn-lg btn-success" href="/tomcat"
+              ><span class="glyphicon glyphicon-briefcase"></span>Tomcat</a
+            >
+            <a type="button" class="btn btn-lg btn-success" href="/node"
+              ><span class="glyphicon glyphicon-briefcase"></span>Node.js</a
+            >
+          </div>
+        </li>
+        <li class="main-list-ulli">
+          <div class="java-main-page">
+            <h3>Web Hosting</h3>
+            <a
+              type="button"
+              class="btn btn-lg btn-primary"
+              href="/pythonanywhere"
+              ><span class="glyphicon glyphicon-th-large"></span
+              >PythonAnywhere</a
+            >
+            <a type="button" class="btn btn-lg btn-primary" href="/heroku"
+              ><span class="glyphicon glyphicon-th-large"></span>Heroku</a
+            >
+            <a type="button" class="btn btn-lg btn-primary" href="/personal"
+              ><span class="glyphicon glyphicon-th-large"></span>Personal
+            </a>
+          </div>
+        </li>
+
+        <li class="main-list-ulli">
+          <div class="java-main-page">
+            <h3>Other Projects</h3>
+            <a
+              type="button"
+              class="btn btn-lg btn-warning"
+              href="/minecraftserver"
+              ><span class="glyphicon glyphicon-th-large"></span>Minecraft
+              Server</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-info text-center" role="alert">
+        Working on projects to better my skills and enjoying the benefits
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <h3>
+            <span class="glyphicon glyphicon-info-sign"></span> Upcoming
+            Projects
+          </h3>
+          <ul>
+            <li>Python</li>
+            <ul>
+              <li>General Layout</li>
+              <li>Advanced Math</li>
+            </ul>
+            <li>Django</li>
+            <ul>
+              <li>Website deployment</li>
+              <li>PythonAnywhere</li>
+            </ul>
+            <li>Tomcat</li>
+          </ul>
         </div>
-    </li>
-    <li class="main-list-ulli">
-      <div class= "java-main-page">
-        <h3>Web Hosting</h3>
-        <a type="button" class="btn btn-lg btn-primary" href="/pythonanywhere"><span class="glyphicon glyphicon-th-large"></span>PythonAnywhere</a>
-        <a type="button" class="btn btn-lg btn-primary" href="/heroku"><span class="glyphicon glyphicon-th-large"></span>Heroku</a>
-        <a type="button" class="btn btn-lg btn-primary" href="/personal"><span class="glyphicon glyphicon-th-large"></span>Personal </a>
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
+          <ul>
+            <li>Contract Work</li>
+            <ul>
+              <li>Developer</li>
+              <li>Analyst</li>
+              <li>QA</li>
+            </ul>
+          </ul>
+        </div>
       </div>
-     </li>
-     
-     <li class="main-list-ulli">
-      <div class= "java-main-page">
-        <h3>Other Projects</h3>
-        <a type="button" class="btn btn-lg btn-warning" href="/minecraftserver"><span class="glyphicon glyphicon-th-large"></span>Minecraft Server</a>
-      </div>
-     </li>
-     
-      
-  </ul>
-  </div>
-
- <div class="container"> 
-    
-    
-  <div class="alert alert-info text-center" role="alert">
-    Working on projects to better my skills and enjoying the benefits
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> Upcoming Projects</h3>
-      <ul>
-        <li>Python</li>
-        <ul>
-          <li>General Layout</li>
-          <li>Advanced Math</li>
-        </ul>
-        <li>Django</li>
-        <ul>
-          <li>Website deployment</li>
-          <li>PythonAnywhere</li>
-        </ul>
-        <li>Tomcat</li>
-      </ul>
+      <!-- row -->
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>Contract Work</li>
-        <ul>
-          <li>Developer</li>
-          <li>Analyst</li>
-          <li>QA</li>
-
-        </ul>
-      </ul>
-     
-    </div>
-  </div> <!-- row -->
-</div>
-<script>
-  function makeItHappen(){
-    window.open('https://github.com/jacobesplin?tab=repositories', '_blank');
-  }
-</script>
-<script>
-  
-</script>
-</body>
-
+    <script>
+      function makeItHappen() {
+        window.open(
+          "https://github.com/jacobesplin?tab=repositories",
+          "_blank"
+        );
+      }
+    </script>
+    <script src="https://skygods.servegame.com:8443/static/js/main.js"></script>
+  </body>
 </html>
