@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'index')}"
+>
+  <head> </head>
+
+  <body>
+    <div id="jumbo"></div>
+    <div class="container">
+      <div id="indexPageContent"></div>
+      <div id="indexWorkContent"></div>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <h3>
+            <span class="glyphicon glyphicon-info-sign"></span> Upcoming
+            Projects
+          </h3>
+          <ul>
+            <li>Python</li>
+            <ul>
+              <li>General Layout</li>
+              <li>Advanced Math</li>
+            </ul>
+            <li>Django</li>
+            <ul>
+              <li>Website deployment</li>
+              <li>PythonAnywhere</li>
+            </ul>
+            <li>Tomcat</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
+          <ul>
+            <li>Contract Work</li>
+            <ul>
+              <li>Developer</li>
+              <li>Analyst</li>
+              <li>QA</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <script>
+      function makeItHappen() {
+        window.open(
+          "https://github.com/jacobesplin?tab=repositories",
+          "_blank"
+        );
+      }
+    </script>
+    <script src="https://skygods.servegame.com:8443/static/js/main.js"></script>
+  </body>
+</html>

@@ -75,24 +75,24 @@ public class Main {
   }
 
   // languages
-  @RequestMapping("/java")
-  String java(HttpServletRequest request, Map<String, Object> model) {
-    ArrayList<ProjectList> project = new ArrayList<>();
-    project.add(new ProjectList("Network Tool", "/pics/NetworkTool.jpg"));
-    project.add(new ProjectList("AlgorithmsDataStructures", "/pics/AlgorithmsDataStructures.JPG"));
+  @RequestMapping("/projectLists")
+  String java(HttpServletRequest request, Map<String, Object> model, @RequestParam String q) {
+    Projects projects = new Projects();
+    ArrayList<ProjectList> project = projects.getProjects(q);
     model.put("Projects", project);
-    TrackVisitors.trackMe(request.getRemoteAddr(), "java");
+    TrackVisitors.trackMe(request.getRemoteAddr(), q);
     return "languages";
   }
 
-  @RequestMapping("/python")
-  String python(Map<String, Object> model) {
-    ArrayList<ProjectList> project = new ArrayList<>();
-    project.add(new ProjectList("Python", "/pics/NetworkTool.jpg"));
-    model.put("Projects", project);
-    return "languages";
-  }
-
+  /*
+   * @RequestMapping("/python")
+   * String python(Map<String, Object> model) {
+   * ArrayList<ProjectList> project = new ArrayList<>();
+   * project.add(new ProjectList("Python", "/pics/NetworkTool.jpg", "3"));
+   * model.put("Projects", project);
+   * return "languages";
+   * }
+   */
   @RequestMapping("/javascript")
   String javascript(Map<String, Object> model) {
     String[] projects = new String[] {};
@@ -115,21 +115,20 @@ public class Main {
     model.put("Projects", projects);
     return "languages";
   }
-
-  @RequestMapping("/react")
-  String react(Map<String, Object> model) {
-    ArrayList<ProjectList> project = new ArrayList<>();
-    project.add(new ProjectList("petsmart", "/pics/petsmart.JPG"));
-    model.put("Projects", project);
-    return "languages";
-  }
+  /*
+   * @RequestMapping("/react")
+   * String react(Map<String, Object> model) {
+   * ArrayList<ProjectList> project = new ArrayList<>();
+   * 
+   * model.put("Projects", project);
+   * return "languages";
+   * }
+   */
 
   @RequestMapping(value = "/languages/{urlParameter}")
   String viewProject(HttpServletRequest request, @RequestParam("project") String project, Map<String, Object> model) {
-    API api = new API();
-    String urlApi = "https://appsolutions.pythonanywhere.com/api/v12/data/html/" + project.replace(" ", "");
-    String html = api.pullData(urlApi);
-    model.put("body", html);
+    Projects projects = new Projects();
+    model.put("body", projects.projectConents(project));
     TrackVisitors.trackMe(request.getRemoteAddr(), "languages/" + project.replace(" ", ""));
     return "viewProject";
   }

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+<body>
+    <div class="container">
+        <h1>Thank you! you order is being processed!</h1>
+        <h4><label>Item:<span th:text='${item}' /></label></h4>
+        <h4><label>Price:<span th:text='${amount}' /></label></h4>
+        
+    </div>
+</body>
+</html>
