@@ -80,7 +80,7 @@ public class Main {
     Projects projects = new Projects();
     ArrayList<ProjectList> project = projects.getProjects(q);
     model.put("Projects", project);
-    TrackVisitors.trackMe(request.getRemoteAddr(), q);
+    // TrackVisitors.trackMe(request.getRemoteAddr(), q);
     return "languages";
   }
 

@@ -11,6 +11,7 @@ public class Projects {
     API api = new API();
 
     private JSONArray getJsonArray(String value, String getObjectValue) {
+        System.out.println(value);
         Object obj = JSONValue.parse(value);
         JSONObject jsonObject = (JSONObject) obj;
         try {
@@ -27,13 +28,14 @@ public class Projects {
 
     public ArrayList<ProjectList> getProjects(String projectName) {
         ArrayList<ProjectList> projectList = new ArrayList<>();
+        String url = "https://skygods.servegame.com:8443";
         JSONArray response = getJsonArray(
-                api.postData("https://skygods.servegame.com:8443/api/v12/projectprogramming/projects",
-                        "{\"project\":\"" + projectName + "\""),
+                api.postData(url + "/api/v12/projectprogramming/projects",
+                        "{\"project\":\"" + projectName + "\"}"),
                 "data");
         for (int i = 0; i < response.size(); i++) {
             projectList.add(new ProjectList(getJsonObject((JSONObject) response.get(i), "name"),
-                    getJsonObject((JSONObject) response.get(i), "pic"),
+                    getJsonObject((JSONObject) response.get(i), "img"),
                     getJsonObject((JSONObject) response.get(i), "id")));
         }
         return projectList;
