@@ -42,7 +42,7 @@ public class Projects {
     public String projectConents(String id) {
         API api = new API();
         String results = api.postData("https://skygods.servegame.com:8443/api/v12/projectprogramming/projects/contents",
-                "{\"project\":\"" + id + "\"");
+                "{\"project\":\"" + id + "\"}");
         System.out.println(results);
         return results;
     }
