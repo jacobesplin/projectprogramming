@@ -31,7 +31,7 @@ public class WebController implements WebMvcConfigurer {
 
 	@RequestMapping("/charge")
 	public String charge(Model model, HttpServletRequest request) {
-		TrackVisitors.trackMe(request.getRemoteAddr(), "charge");
+		// TrackVisitors.trackMe(request.getRemoteAddr(), "charge");
 		model.addAttribute("amount", 50);
 		model.addAttribute("item", "T-Shirt");
 		return "charge";
@@ -47,6 +47,31 @@ public class WebController implements WebMvcConfigurer {
 		return "checkout";
 	}
 
+	@GetMapping(value = "/login")
+	String login(LoginForm loginForm) {
+		return "login/login";
+	}
+
+	@PostMapping("/login")
+	public String postLogin(@Valid LoginForm loginForm, BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+			return "login/login";
+		}
+		try {
+			API api = new API();
+			System.out.println(loginForm.getEmail());
+			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
+			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":" + "\"" + loginForm.toString() +
+					"\",\"subject\":\"Project Programming Contact Form\"}";
+			//api.postData(url, call);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		// System.out.println(contactForm.getEmail());
+		return "redirect:/confirmation";
+	}
 	@GetMapping("/contact")
 	public String showForm(ContactForm contactForm) {
 		return "contact";
@@ -126,7 +151,7 @@ public class WebController implements WebMvcConfigurer {
 
 	@GetMapping("/search")
 	public String search(@RequestParam String q) {
-		System.out.println("value of q " + q);
+		// System.out.println("value of q " + q);
 		return Search.search(q);
 	}
 

@@ -62,13 +62,7 @@ public class Main {
     return "about";
   }
 
-  /*
-   * @RequestMapping("/team")
-   * String team (Map<String, Object> model) {
-   * model.put("msg","Welcome!");
-   * return "team";
-   * }
-   */
+
   @RequestMapping("/confirmation")
   String confirmation() {
     return "confirmation";
@@ -84,46 +78,6 @@ public class Main {
     return "languages";
   }
 
-  /*
-   * @RequestMapping("/python")
-   * String python(Map<String, Object> model) {
-   * ArrayList<ProjectList> project = new ArrayList<>();
-   * project.add(new ProjectList("Python", "/pics/NetworkTool.jpg", "3"));
-   * model.put("Projects", project);
-   * return "languages";
-   * }
-   */
-  @RequestMapping("/javascript")
-  String javascript(Map<String, Object> model) {
-    String[] projects = new String[] {};
-
-    model.put("Projects", projects);
-    return "languages";
-  }
-
-  @RequestMapping("/cplusplus")
-  String cplusplus(Map<String, Object> model) {
-    String[] projects = new String[] {};
-
-    model.put("Projects", projects);
-    return "languages";
-  }
-
-  @RequestMapping("/csharp")
-  String csharp(Map<String, Object> model) {
-    String[] projects = new String[] {};
-    model.put("Projects", projects);
-    return "languages";
-  }
-  /*
-   * @RequestMapping("/react")
-   * String react(Map<String, Object> model) {
-   * ArrayList<ProjectList> project = new ArrayList<>();
-   * 
-   * model.put("Projects", project);
-   * return "languages";
-   * }
-   */
 
   @RequestMapping(value = "/languages/{urlParameter}")
   String viewProject(HttpServletRequest request, @RequestParam("project") String project, Map<String, Object> model) {
@@ -133,41 +87,7 @@ public class Main {
     return "viewProject";
   }
 
-  // This is web frameworks
-  @RequestMapping("/django")
-  String django() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/flask")
-  String flask() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/tomcat")
-  String tomcat() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/node")
-  String node() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/pythonanywhere")
-  String pythonanywhere() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/heroku")
-  String heroku() {
-    return "confirmation";
-  }
-
-  @RequestMapping("/personal")
-  String personal() {
-    return "confirmation";
-  }
+  
 
   @RequestMapping("/minecraftserver")
   String minecraft(Map<String, Object> model) {

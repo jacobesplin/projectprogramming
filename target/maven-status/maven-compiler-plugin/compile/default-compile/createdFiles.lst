@@ -15,4 +15,5 @@ com\project\TrackVisitors.class
 com\project\WebController.class
 com\project\AppointmentForm.class
 com\project\Projects.class
+com\project\LoginForm.class
 com\project\APISelfSigned$1.class

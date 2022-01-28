@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{fragments/layout :: layout (~{::body},'index')}"
->
-  <head> </head>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
 
-  <body>
-    <div id="jumbo"></div>
-    <div class="container">
-      <div id="indexPageContent"></div>
-      <div id="indexWorkContent"></div>
-      <hr />
-      <div class="row">
-        <div class="col-md-6">
+<head> </head>
+
+<body>
+  <div id="jumbo"></div>
+  <div class="container">
+    <div id="indexPageContent"></div>
+    <div id="indexWorkContent"></div>
+    <hr />
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="centerNewsSection">
           <h3>
             <span class="glyphicon glyphicon-info-sign"></span> Upcoming
             Projects
@@ -28,10 +28,12 @@
               <li>Website deployment</li>
               <li>PythonAnywhere</li>
             </ul>
-            <li>Tomcat</li>
+            <li class="indexLi">Tomcat</li>
           </ul>
         </div>
-        <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div class="centerNewsSection">
           <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
           <ul>
             <li>Contract Work</li>
@@ -41,6 +43,7 @@
               <li>QA</li>
             </ul>
           </ul>
+
         </div>
       </div>
       <!-- row -->
@@ -54,5 +57,6 @@
       }
     </script>
     <script src="https://skygods.servegame.com:8443/static/js/main.js"></script>
-  </body>
+</body>
+
 </html>

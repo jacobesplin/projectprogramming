@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'hello')}">
+
 <body>
-    
+
     <div class="container">
-        <div class="containForm">
-            <form action="#" th:object="${appointmentForm}" method="post">
-                <div class="form-group">
-                    <label for="firstName">Fist Name:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name" th:field="*{firstName}"  required>
-                    <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</label>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" th:field="*{lastName}"  required>
-                    <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</label>
-                </div>
-                <div class="form-group">
-                    <label for="InputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email" th:field="*{email}"  required>
-                    <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</label>
-                </div>
-                <div class="form-group">
-                    <label for="InputPhone">Phone Number</label>
-                    <input type="text" class="form-control" id="InputPhone" placeholder="Phone Number" oninput="phoneFunc()" th:field="*{phone}" required>
-                    <label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</label>
-                </div>
-                
-                <div class="form-group">
-                    <label for="InputDateTime">Date & Time</label>
-                    <input type="date" class="form-control" id="InputDateTime" th:field="*{date}" min="" required>
-                    <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
-                </div>
-                <div class="form-group">
-                    <select name="time" id="time" th:field="*{time}" required>
-                        <option th:each="timeFrame: ${timeFrame}" th:value="${timeFrame}" th:text="${timeFrame}"/>
-                      </select>
-                    <label th:if="${#fields.hasErrors('time')}" th:errors="*{time}">time Error</label>
-                </div>
-                <!---
+        <div class="centerForm">
+            <div class="containForm">
+                <form action="#" th:object="${appointmentForm}" method="post">
+                    <div class="form-group">
+                        <label for="firstName">Fist Name:</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                            th:field="*{firstName}" required>
+                        <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name
+                            Error</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                            th:field="*{lastName}" required>
+                        <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email"
+                            th:field="*{email}" required>
+                        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPhone">Phone Number</label>
+                        <input type="text" class="form-control" id="InputPhone" placeholder="Phone Number"
+                            oninput="phoneFunc()" th:field="*{phone}" required>
+                        <label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputDateTime">Date & Time</label>
+                        <input type="date" class="form-control" id="InputDateTime" th:field="*{date}" min="" required>
+                        <label th:if="${#fields.hasErrors('date')}" th:errors="*{date}">DateTime Error</label>
+                    </div>
+                    <div class="form-group">
+                        <select name="time" id="time" th:field="*{time}" required>
+                            <option th:each="timeFrame: ${timeFrame}" th:value="${timeFrame}" th:text="${timeFrame}" />
+                        </select>
+                        <label th:if="${#fields.hasErrors('time')}" th:errors="*{time}">time Error</label>
+                    </div>
+                    <!---
                 <div class="alert alert-info text-center" role="alert">
                     <p id="isNotChromeMsg"></p>
                 </div>
                 -->
-                <button type="submit" class="btn btn-success">Submit</button>
-            </form>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
     <script>
-        function isNumber(n)
-        {   
-            if(n=="-")return true;
+        function isNumber(n) {
+            if (n == "-") return true;
             if (n.trim().length === 0)
                 return false;
             return !isNaN(n);
         }
-        function phoneFunc(){
+        function phoneFunc() {
             var num = document.getElementById("InputPhone").value;
             var builder = "";
-            for(i = 0; i<num.length;i++){
-                if(isNumber(num[i])){
-                    if(i==3 && num[i]!="-"){
-                        builder = builder+ "-";
+            for (i = 0; i < num.length; i++) {
+                if (isNumber(num[i])) {
+                    if (i == 3 && num[i] != "-") {
+                        builder = builder + "-";
                     }
-                    if(i==7 && num[i]!="-"){
-                        builder = builder+ "-";
+                    if (i == 7 && num[i] != "-") {
+                        builder = builder + "-";
                     }
                     builder = builder + num[i];
-                    if(num.length>12){
+                    if (num.length > 12) {
                         document.getElementById("InputPhone").value = builder.substring(0, 12);
-                    }else{
+                    } else {
                         document.getElementById("InputPhone").value = builder;
                     }
-                }else{
-                    document.getElementById("InputPhone").value = num.substring(0, num.length-1);
+                } else {
+                    document.getElementById("InputPhone").value = num.substring(0, num.length - 1);
                 }
+            }
         }
-    }
     </script>
     <script>
-        function dateMinFunc(){
+        function dateMinFunc() {
             var today = new Date();
             var dd = today.getDate();
-            var mm = today.getMonth()+1; //January is 0!
+            var mm = today.getMonth() + 1; //January is 0!
             var yyyy = today.getFullYear();
-            if(dd<10){
-                    dd='0'+dd
-                } 
-                if(mm<10){
-                    mm='0'+mm
-                } 
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
 
-            today = yyyy+'-'+mm+'-'+dd;
-            
+            today = yyyy + '-' + mm + '-' + dd;
+
             document.getElementById("InputDateTime").value = today;
-            document.getElementById("InputDateTime").setAttribute("min",today);
+            document.getElementById("InputDateTime").setAttribute("min", today);
         }
         /*
         function checkBrowser(){
@@ -111,4 +118,5 @@
     </script>
 
 </body>
+
 </html>

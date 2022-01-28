@@ -23,6 +23,7 @@ class TrackVisitors {
 				 * 
 				 * }
 				 */
+				/*
 				try {
 					APISelfSigned api_self = new APISelfSigned();
 					api_self.sendDataToServer("https://jacobsmuzik.ddns.net/ReactSpringBoot/api/v12/data/collection",
@@ -30,6 +31,7 @@ class TrackVisitors {
 				} catch (Exception e) {
 
 				}
+				*/
 
 			}
 		};
