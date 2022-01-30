@@ -12,7 +12,7 @@
                 <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</label>
               </li>
               <li>
-                <input class= "loginInPutFields" type="password" name="password" placeholder="Password" required />
+                <input class= "loginInPutFields" type="password" name="password" placeholder="Password" th:field="*{password}" required />
               </li>
               <li>
                 <input class ="loginBtn" type="submit" value="Log In" />
