@@ -99,6 +99,7 @@ public class APISelfSigned{
     //These are the functions asked for in the story
     /*--------------------------------------------------------------------------------------------------------*/
    
+	/*
     public static void main(String[] args) {
     	APISelfSigned api = new APISelfSigned();
     	while(true) {
@@ -111,6 +112,7 @@ public class APISelfSigned{
 				e.printStackTrace();
 			}
     	}
+		*/
     }
     
     
