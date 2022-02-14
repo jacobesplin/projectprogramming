@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -17,8 +16,9 @@ public class API {
     public String pullData(String api) {
         try {
             URL url = new URL(api);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestProperty("accept", "application/json");
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Mobile Safari/537.36");
             InputStream responseStream = connection.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(responseStream);
             Stream<String> streamOfString = new BufferedReader(inputStreamReader).lines();
