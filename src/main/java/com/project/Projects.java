@@ -28,7 +28,10 @@ public class Projects {
     public ArrayList<ProjectList> getProjects(String projectName) {
         ArrayList<ProjectList> projectList = new ArrayList<>();
         JSONArray response = getJsonArray(
-                api.pullData(url + "/api/v12/projectprogramming/projects"),
+                api.postData(url + "/api/v12/projectprogramming/projects",
+                        "{\"project\":\"" + projectName + "\""
+                    +"{\"data\":\"getProjects\""+
+                    "}"),
                 "data");
         for (int i = 0; i < response.size(); i++) {
             projectList.add(new ProjectList(getJsonObject((JSONObject) response.get(i), "name"),
