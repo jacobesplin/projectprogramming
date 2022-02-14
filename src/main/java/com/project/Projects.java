@@ -7,11 +7,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONValue;
 
 public class Projects {
-
+    String url = "https://skygods.servegame.com:8443";
     API api = new API();
 
     private JSONArray getJsonArray(String value, String getObjectValue) {
-        System.out.println(value);
         Object obj = JSONValue.parse(value);
         JSONObject jsonObject = (JSONObject) obj;
         try {
@@ -28,10 +27,11 @@ public class Projects {
 
     public ArrayList<ProjectList> getProjects(String projectName) {
         ArrayList<ProjectList> projectList = new ArrayList<>();
-        String url = "https://skygods.servegame.com:8443";
         JSONArray response = getJsonArray(
                 api.postData(url + "/api/v12/projectprogramming/projects",
-                        "{\"project\":\"" + projectName + "\"}"),
+                        "{\"project\":\"" + projectName + "\""
+                    +"{\"data\":\"getProjects\""+
+                    "}"),
                 "data");
         for (int i = 0; i < response.size(); i++) {
             projectList.add(new ProjectList(getJsonObject((JSONObject) response.get(i), "name"),
@@ -43,9 +43,10 @@ public class Projects {
 
     public String projectConents(String id) {
         API api = new API();
-        String results = api.postData("https://skygods.servegame.com:8443/api/v12/projectprogramming/projects/contents",
-                "{\"project\":\"" + id + "\"}");
-        System.out.println(results);
+        String results = api.postData(url + "/api/v12/projectprogramming/projects/contents",
+                "{\"project\":\"" + id + "\""+
+                "{\"data\":\"getContents\""+
+                "}");
         return results;
     }
 
