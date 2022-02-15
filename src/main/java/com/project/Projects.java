@@ -30,7 +30,7 @@ public class Projects {
         JSONArray response = getJsonArray(
                 api.postData(url + "/api/v12/projectprogramming/projects",
                         "{\"project\":\"" + projectName + "\""
-                    +"{\"data\":\"getProjects\""+
+                    +",\"data\":\"getProjects\""+
                     "}"),
                 "data");
         for (int i = 0; i < response.size(); i++) {
@@ -45,7 +45,7 @@ public class Projects {
         API api = new API();
         String results = api.postData(url + "/api/v12/projectprogramming/projects/contents",
                 "{\"project\":\"" + id + "\""+
-                "{\"data\":\"getContents\""+
+                ",\"data\":\"getContents\""+
                 "}");
         return results;
     }
