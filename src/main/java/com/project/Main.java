@@ -47,11 +47,10 @@ public class Main {
   @Autowired
   private DataSource dataSource;
 
-  
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
   }
-  
+
   @RequestMapping("/")
   String index(HttpServletRequest request) {
     TrackVisitors.trackMe(request.getRemoteAddr(), "home");
@@ -62,7 +61,6 @@ public class Main {
   String about() {
     return "about";
   }
-
 
   @RequestMapping("/confirmation")
   String confirmation() {
@@ -79,16 +77,14 @@ public class Main {
     return "languages";
   }
 
-
   @RequestMapping(value = "/languages/{urlParameter}")
   String viewProject(HttpServletRequest request, @RequestParam("project") String project, Map<String, Object> model) {
     Projects projects = new Projects();
+    System.out.println(projects.projectConents(project));
     model.put("body", projects.projectConents(project));
     TrackVisitors.trackMe(request.getRemoteAddr(), "languages/" + project.replace(" ", ""));
     return "viewProject";
   }
-
-  
 
   @RequestMapping("/minecraftserver")
   String minecraft(Map<String, Object> model) {

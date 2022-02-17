@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+    <body>
+        <div class="container">
+            <div th:utext="${body}">[(${body})]</div>
+        </div>
+        
+    </body>
+</html>

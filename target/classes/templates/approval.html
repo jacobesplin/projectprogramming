@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'hello')}">
+
+<body>
+  <div class="container">
+    <div class="centerForm">
+      <div class="containForm">
+        <form action="#" th:object="${approveForm}" method="post">
+          <div class="form-group">
+            <label for="business">Business</label>
+            <input type="text" class="form-control" id="business" placeholder="Enter Business Name"
+              th:field="*{business}" required />
+            <label th:if="${#fields.hasErrors('business')}" th:errors="*{business}">Name Error</label>
+          </div>
+
+          <div class="form-group">
+            <label for="first_last_Name">First/Last Name</label>
+            <input type="text" class="form-control" id="submitterName" placeholder="First and Last Name"
+              th:field="*{name}" required />
+            <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</label>
+          </div>
+          <div class="form-group">
+            <label for="approvalCode">Approval Code</label>
+            <input type="text" class="form-control" id="approvalCode" placeholder="Approval Code"
+              th:field="*{approvalCode}" />
+            <label th:if="${#fields.hasErrors('approvalCode')}" th:errors="*{approvalCode}">Code Error</label>
+          </div>
+          <div class="form-group">
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

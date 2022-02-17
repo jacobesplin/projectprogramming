@@ -60,18 +60,19 @@ public class WebController implements WebMvcConfigurer {
 		}
 		try {
 			API api = new API();
-			System.out.println(loginForm.getEmail());
+			// System.out.println(loginForm.getEmail());
 			String url = "https://appsolutions.pythonanywhere.com/api/v12/data/post/contact";
 			String call = "{\"apiKey\":\"8ny3Ea8N2w4PCm5E\",\"body\":" + "\"" + loginForm.toString() +
 					"\",\"subject\":\"Project Programming Contact Form\"}";
-			//api.postData(url, call);
+			// api.postData(url, call);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 
 		// System.out.println(contactForm.getEmail());
-		return "redirect:/confirmation";
+		return "redirect:/home";
 	}
+
 	@GetMapping("/contact")
 	public String showForm(ContactForm contactForm) {
 		return "contact";
